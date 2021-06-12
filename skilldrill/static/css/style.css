@@ -163,7 +163,6 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: #fff;
   transition: all 0.5s;
   z-index: 997;
   height: 86px;
@@ -199,6 +198,14 @@ h1, h2, h3, h4, h5, h6 {
 .scrolled-offset {
   margin-top: 70px;
 }
+
+.blur-backdrop-filter {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
