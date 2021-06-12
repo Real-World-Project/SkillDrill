@@ -736,7 +736,7 @@ section {
 }
 
 .featured-services .icon-box:hover::before {
-    background: linear-gradient(to right, rgba(211, 47, 47, 1), rgb(6, 24, 105));
+    background: #106eea;
     top: 0;
     border-radius: 0px;
 }
