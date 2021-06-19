@@ -260,7 +260,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 2px;
   bottom: -6px;
   left: 0;
-  background-color: #106eea;
+  background-color: #000;
   visibility: hidden;
   width: 0px;
   transition: all 0.3s ease-in-out 0s;
@@ -272,7 +272,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: #106eea;
+  color: #000;
 }
 
 .navbar .dropdown ul {
@@ -2098,4 +2098,18 @@ ul {
     max-height: 200px;
     width: 255px;
     overflow-x: hidden;
+}
+
+.scrollable-menu li{
+  margin: 0;
+	padding: 7px 12px;
+	border-bottom: 1px solid #ccc;
+}
+
+.scrollable-menu li a{
+  color: black;
+}
+
+.dropdown-menu {
+  padding: 0.1px;
 }
