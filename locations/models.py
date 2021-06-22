@@ -4,6 +4,7 @@ from django.db import models
 
 class Location(models.Model):
     location = models.CharField(max_length=200, null=True)
+    cover = models.FileField(upload_to='skilldrill/static/img/location', default='img/location/kathmandu.jpeg')
     # services = models.ManyToManyField(Service, blank=True, related_name="services")
     #
     def __str__(self):
