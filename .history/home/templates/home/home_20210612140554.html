@@ -1,151 +1,89 @@
-{% extends "layout.html" %}
-{% load static %}
-{% block title %}
+{% extends "layout.html" %} {% load static %} {% block title %}
 <title>SkillDrill</title>
 
-{% endblock %}
+{% endblock %} {% block body %}
 
-{% block body %}
-{% include 'navbar.html' %}
 <!-- ======= Hero Section Bishal ======= -->
 <section id="hero" class="d-flex align-items-center">
-  <div class="container" data-aos="zoom-out" data-aos-delay="100">
-    <h1>Welcome to <span>Skill Drill</span>.</h1>
-    <h2>SkillDrill - platform that helps customers to book reliable services and a solution for unemployment. </h2>
-    <div class="d-flex">
-      <div class="btn-group">
-        <button type="button" class="btn btn-outline-primary btn-lg dropdown-toggle" data-toggle="dropdown">Choose Your Location<span class="caret"></span></button>
-        <ul class="dropdown-menu scrollable-menu" role="menu">
-        {% for location in locations %}
-          <li><a href="locations/{{ location.location }}">{{ location }}</a></li>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</section><!-- End Hero -->
-
-
-
- <!-- Our Team section -->
-
- <!-- ======= About Section ======= -->
-     <section id="about" class="about section-bg">
-      <div class="container" data-aos="fade-up">
-       <div class="section-title">
-        <h2>About</h2>
-        <h3>Find Out More <span>About Us</span></h3>
-      </div>
-      <p>
-           SkillDrill is an online marketplace for local services where services like Repair & maintenance, home cleaning,
-           homecare & design, pest control, packers & movers, business services, event management, weddings & party management,
-           health & wellness, salon, and other local services are all available on SkillDrill. It helps customers to book reliable
-           home services like plumbing, carpentry, painting and so on. It creates job opportunity for millions of jobless people.
-           Its vision is to empower service professionals to deliver services at home like never seen before. Its main motto is to make
-           people hassle free from wandering for service professionals.
-      </p>
-    </div>
-  </section>
-
- <main id="main">
-
-     <!-- ======= Featured Services Section Bishal ======= -->
-     <section id="featured-services" class="featured-services">
-       <div class="container" data-aos="fade-up">
-         <div class="section-title">
-           <h2>Services</h2>
-           <h3>Check our <span>Services</span></h3>
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+        <h1>Welcome to <span>Skill Drill</span></h1>
+        <h2>SkillDrill - platform that helps customers to book reliable services and a solution for unemployment. </h2>
+        <div class="d-flex">
+            <a href="#about" class="btn-get-started scrollto">Choose your Location</a>
+            <a href="#" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Know more about us</span></a>
         </div>
-         <div class="row">
-           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-               <div class="icon"><i class="bx bx-paint-roll"></i></div>
-               <h4 class="title"><a href="">Painter</a></h4>
-               <p class="description">On-Time Mess-free Experience</p>
-               <p class="description">High Quality Paints with Transparent Cost</p>
-             </div>
-           </div>
+    </div>
+</section>
+<!-- End Hero -->
 
-           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-               <div class="icon"><i class="bx bx-chip"></i></div>
-               <h4 class="title"><a href="">Repair Appliances</a></h4>
-               <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-             </div>
-           </div>
+<main id="main">
 
-           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-               <div class="icon"><i class="bx bx-spa"></i></div>
-               <h4 class="title"><a href="">Home Spa</a></h4>
-               <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-             </div>
-           </div>
+    <!-- ======= Featured Services Section Bishal ======= -->
+    <section id="featured-services" class="featured-services">
+        <div class="container" data-aos="fade-up">
 
-           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-               <div class="icon"><i class="bx bxs-virus-block"></i></div>
-               <h4 class="title"><a href="">Disinfecter</a></h4>
-               <p class="description"> Treatment Services with Technical Advance Amenities</p>
-             </div>
-           </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon"><i class="bx bx-paint-roll"></i></div>
+                        <h4 class="title"><a href="">Painter</a></h4>
+                        <p class="description">Painting has evolved into a specialized activity that is now performed by experienced painting contractors with extensive knowledge of home paints, shades, and lighting.</p>
+                    </div>
+                </div>
 
-           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-               <div class="icon"><i class="bx bxl-zoom"></i></div>
-               <h4 class="title"><a href="">Photographer</a></h4>
-               <p class="description">Capture beautiful memories in High Quality.</p>
-             </div>
-           </div>
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bx bx-chip"></i></div>
+                        <h4 class="title"><a href="">Repair Appliances</a></h4>
+                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                    </div>
+                </div>
 
-           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-               <div class="icon"><i class="bx bx-bug"></i></div>
-               <h4 class="title"><a href="">Chemical Guy</a></h4>
-               <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-             </div>
-           </div>
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon"><i class="bx bx-spa"></i></div>
+                        <h4 class="title"><a href="">Home Spa</a></h4>
+                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                    </div>
+                </div>
 
-           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-               <div class="icon"><i class="bx bx-dumbbell"></i></div>
-               <h4 class="title"><a href="">Trainer</a></h4>
-               <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-             </div>
-           </div>
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon"><i class="bx bxs-virus-block"></i></div>
+                        <h4 class="title"><a href="">Disinfecter</a></h4>
+                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                    </div>
+                </div>
 
-           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-               <div class="icon"><i class="bx bxs-baby-carriage"></i></div>
-               <h4 class="title"><a href="">Child Care</a></h4>
-               <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-             </div>
-           </div>
+            </div>
 
-         </div>
-
-       </div>
-     </section><!-- End Featured Services Section -->
-
-    <!-- Professionals Section -->
-    <section id="professionals" class="professionals section-bg">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>Professionals</h2>
-          <h3>Heartly Welcome <span>Professionals</span></h3>
         </div>
-      </div>
     </section>
-    <!-- Professional Section Ends -->
+    <!-- End Featured Services Section -->
 
-     <!-- Our Team section -->
-     <section id="team" class="team section-bg">
+    <!-- Our Team section -->
+
+    <section id="about">
+        <div class="container">
+            <h1 class="text-center">About Skill Drill</h1>
+            <div class="text">
+                <p>
+                    SkillDrill is an online marketplace for local services where services like Repair & maintenance, home cleaning, homecare & design, pest control, packers & movers, business services, event management, weddings & party management, health & wellness, salon,
+                    and other local services are all available on SkillDrill. It helps customers to book reliable home services like plumbing, carpentry, painting and so on. It creates job opportunity for millions of jobless people. Its vision is to empower
+                    service professionals to deliver services at home like never seen before. Its main motto is to make people hassle free from wandering for service professionals.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team section -->
+    <section id="our-team">
         <div id="rs-team" class="rs-team fullwidth-team pt-100 pb-70 mt-3">
-            <div class="container section-title" data-aos="fade-up">
-                <h2>Team</h2>
-                <h3>Our Hardworking <span>Team</span></h3>
+            <div class="container">
+                <h1 class="text-center">Our Team</h1>
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
-                        <div class="member team-item">
+                        <div class="team-item">
                             <div class="team-img">
                                 <img src="{% static 'img/team/banish.jpg' %}" alt="team Image">
                                 <div class="normal-text">
@@ -182,7 +120,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="member team-item">
+                        <div class="team-item">
                             <div class="team-img">
                                 <img src="{% static 'img/team/bishal.jpg' %}" alt="team Image">
                                 <div class="normal-text">
@@ -219,7 +157,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="member team-item">
+                        <div class="team-item">
                             <div class="team-img">
                                 <img src="{% static 'img/team/kiran.jpg' %}" alt="team Image">
                                 <div class="normal-text">
@@ -256,7 +194,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="member team-item">
+                        <div class="team-item">
                             <div class="team-img">
                                 <img src="{% static 'img/team/sagar.jpg' %}" alt="team Image">
                                 <div class="normal-text">
@@ -293,7 +231,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="member team-item">
+                        <div class="team-item">
                             <div class="team-img">
                                 <img src="{% static 'img/team/achbj.jpg' %}" alt="team Image">
                                 <div class="normal-text">
@@ -333,21 +271,10 @@
             </div>
             <!-- .container-fullwidth -->
         </div>
-     </section>
-    <!-- Team Section Ends -->
-
-    <!-- Professionals Section -->
-    <section id="contact" class="contact section-bg">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>Contact Us</h2>
-          <h3>You can <span>Get Us Through</span></h3>
-        </div>
-      </div>
     </section>
-    <!-- Professional Section Ends -->
 
-  </main>
+
+</main>
 
 
 {% endblock %}
