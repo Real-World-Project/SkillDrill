@@ -200,7 +200,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .blur-backdrop-filter {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(229, 229, 234, 0.6);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
