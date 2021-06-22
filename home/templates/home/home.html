@@ -6,34 +6,25 @@
 {% endblock %}
 
 {% block body %}
-
+{% include 'navbar.html' %}
 <!-- ======= Hero Section Bishal ======= -->
- <section id="hero" class="d-flex align-items-center">
-   <div class="container" data-aos="zoom-out" data-aos-delay="100">
-     <h1>Welcome to <span>Skill Drill</span>.</h1>
-     <h2>SkillDrill - platform that helps customers to book reliable services and a solution for unemployment. </h2>
-     <div class="d-flex">
-
-     <div class="btn-group">
-         <button type="button" class="btn btn-outline-primary btn-lg dropdown-toggle" data-toggle="dropdown">Choose Your Location<span class="caret"></span></button>
-         <ul class="dropdown-menu scrollable-menu" role="menu">
-             <li><a href="#">Kathmandu</a></li>
-             <li><a href="#">Lalitpur</a></li>
-             <li><a href="#">Bhaktapur</a></li>
-             <li><a href="#">Chitwan</a></li>
-             <li><a href="#">Pokhara</a></li>
-             <li><a href="#">Biratnagar</a></li>
-             <li><a href="#">Birgunj</a></li>
-             <li><a href="#">Tanahu</a></li>
-             <li><a href="#">Illam</a></li>
-             <li><a href="#">Dolpa</a></li>
-             <li><a href="#">Rolpa</a></li>
-     </div>
+<section id="hero" class="d-flex align-items-center">
+  <div class="container" data-aos="zoom-out" data-aos-delay="100">
+    <h1>Welcome to <span>Skill Drill</span>.</h1>
+    <h2>SkillDrill - platform that helps customers to book reliable services and a solution for unemployment. </h2>
+    <div class="d-flex">
+      <div class="btn-group">
+        <button type="button" class="btn btn-outline-primary btn-lg dropdown-toggle" data-toggle="dropdown">Choose Your Location<span class="caret"></span></button>
+        <ul class="dropdown-menu scrollable-menu" role="menu">
+        {% for location in locations %}
+          <li><a href="locations/{{ location.location }}">{{ location }}</a></li>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section><!-- End Hero -->
 
 
-     </div>
-   </div>
- </section><!-- End Hero -->
 
  <!-- Our Team section -->
 
