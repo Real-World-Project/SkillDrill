@@ -6,9 +6,19 @@
 
 
 {% block body %}
+  {% include 'servicesNavbar.html' %}
   <div class="container py-5">
     <h1>{{ locations.location }}</h1>
 
     <h4>Here goes the services available to {{ locations.location }}</h4>
+    <ul>
+      <h6>
+      {% for service in services %}
+        <li>{{ service.service }} costs {{ service.charge }}</li>
+      {% empty %}
+        <li>No Services Available</li>
+      {% endfor %}
+      </h6>
+    </ul>
   </div>
 {% endblock %}
