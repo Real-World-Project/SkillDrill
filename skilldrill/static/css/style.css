@@ -2095,7 +2095,7 @@ ul {
 
 .scrollable-menu {
     height: auto;
-    max-height: 200px;
+    max-height: 160px;
     width: 255px;
     overflow-x: hidden;
 }
