@@ -163,6 +163,7 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
+  background: #e5e5ea;
   transition: all 0.5s;
   z-index: 997;
   height: 86px;
@@ -199,13 +200,13 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 70px;
 }
 
-.blur-backdrop-filter {
+
+
+/* .blur-backdrop-filter:not(nav #navbar .navbar.navbar-mobile) {
   background: rgba(229, 229, 234, 0.6);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-}
-
-
+} */
 
 /*--------------------------------------------------------------
 # Navigation Menu
