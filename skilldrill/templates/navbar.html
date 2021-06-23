@@ -17,7 +17,7 @@
 </section>
 
 <!-- ======= Header Bishal ======= -->
-<header id="header" class="d-flex align-items-center blur-backdrop-filter">
+<header id="header" class="d-flex align-items-center blur-backdrop-filter ">
   <div class="container d-flex align-items-center justify-content-between">
 
     <h1 class="logo"><a href="{% url 'home' %}">Skill Drill<span>.</span></a></h1>
@@ -52,10 +52,42 @@
 
         <li><a class="nav-link scrollto" href="#blog">Blog</a></li>
         <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        <li><button type="button" class="btn btn-dark">
-          <a class="text text-light" href="#login">Login</a>
+        <li>
+            {% if user.is_authenticated %}
 
-        </button></li>
+                  <li class="nav-item">
+                      <a class="nav-link dropdown-toggle" href="#" id="userMenu"
+                          data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false">
+                          <i class="fa fa-user mr-1 text-success"></i>{{ user.username }}
+                      </a>
+
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                          <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
+                      </div>
+                  </li>
+
+
+            {% else %}
+
+                  <li class="nav-item">
+                      <a class="nav-link dropdown-toggle text-primary" href="#" id="usersMenu"
+                          data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false">
+                          <i class="fa fa-user mr-1 text-primary"></i>Accounts
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                          <a class="dropdown-item" href="{% url 'login' %}">Sign in</a>
+                          <a class="dropdown-item" href="{#}">Sign Up</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="{#}">Password Reset</a>
+                      </div>
+                  </li>
+
+
+
+            {% endif %}
+        </li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
