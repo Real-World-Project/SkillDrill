@@ -52,8 +52,8 @@
 
         <li><a class="nav-link scrollto" href="#blog">Blog</a></li>
         <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        <li><button type="button" class="btn btn-dark mx-3">
-          <a class="text text-light" href="#login">Login</a>
+
+        {% if user.is_authenticated %}
 
                   <li class="nav-item">
                       <a class="nav-link dropdown-toggle" href="#" id="userMenu"
