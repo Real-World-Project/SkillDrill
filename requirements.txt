@@ -3,5 +3,5 @@ django-allauth
 
 =======
 django-allauth
-
+djang-crispy-forms
 >>>>>>> cec7bf5820a47755f58d2cc0af4b373b6846155c
