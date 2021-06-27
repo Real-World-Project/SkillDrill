@@ -452,7 +452,6 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 75vh;
-  background: url("../img/cover3.jpg") top left;
   background-size: cover;
   position: relative;
 }
@@ -464,6 +463,15 @@ h1, h2, h3, h4, h5, h6 {
   background-size: cover;
   position: relative;
 }
+
+#serhero {
+  width: 100%;
+  height: 75vh;
+  background: url("https://www.bergerpaints.com/blog/wp-content/uploads/2019/05/house_wall_painting.png") top left;
+  background-size: cover;
+  position: relative;
+}
+
 
 #hero:before {
   content: "";
