@@ -1,40 +1,46 @@
 {% extends 'layout.html' %}
-
+{% load static %}
 {% block title %}
-  <title>{{ locations.location }}</title>
+<title>{{ locations.location }}</title>
 {% endblock %}
 
 
 {% block body %}
-  {% include 'servicesNavbar.html' %}
-  <section id="lochero" class="d-flex align-items-center">
-    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+{% include 'servicesNavbar.html' %}
+<section id="lochero" class="d-flex align-items-center">
+  <div class="container" data-aos="zoom-out" data-aos-delay="100">
     <h1>{{ locations.location }}</h1>
 
     <h4>Here goes the services available to {{ locations.location }}</h4>
-    <ul>
-      <h5>
-        <table class="table table-dark table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Services</th>
-      <th scope="col">Cost</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for service in services %}
-    <tr>
-      <td>{{ service.service }}</td>
-      <td>{{ service.charge }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-  </table>
 
-
-      </h5>
-    </ul>
   </div>
+</section>
 
-  </section>
+<section id="featured-services" class="featured-services">
+  <div class="container rounded">
+
+    <div class="row justify-content-center">
+      {% for service in services %}
+
+      <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
+        <div class="icon-box d-flex ">
+          <div class="icon"><i class="bx bx-paint-roll"></i></div>
+          <h4 class="title"><a href="{{ locations.location }}/{{ service.title }}" target="#exampleModal">{{ service.title }}</a></h4>
+          <!-- TODO: glightbox -->
+        </div>
+      </div>
+      {% empty %}
+      <h3>No Services Available</h3>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
 {% endblock %}

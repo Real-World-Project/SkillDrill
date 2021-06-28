@@ -10,4 +10,11 @@ def location(request, location_name): #, service_id
         "locations":locations, "services":locations.services.all()
     })
 
+
+def service(request, service_name, location_name):
+    services = Services.objects.get(title=service_name)
+    locations = Location.objects.get(location=location_name)
+    return render(request, "locations/service.html",{
+        "services":services, "locations":locations
+    })
 # Create your views here.

@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'home',
     'services',
     'locations',
+    'crispy_forms',
+    'blog',
 
     # authentication app
     'django.contrib.sites',
@@ -123,7 +125,19 @@ AUTHENTICATION_BACKENDS = [
 
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.techiswell.com'
+EMAIL_HOST_USER = 'noreply@techiswell.com'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = 'Tahaxaina@1'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_USE_TLS = False
 
+
+# crispy - form
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 # Internationalization
