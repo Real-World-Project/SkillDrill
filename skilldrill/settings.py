@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'services',
     'locations',
     'crispy_forms',
+    'blog',
 
     # authentication app
     'django.contrib.sites',
