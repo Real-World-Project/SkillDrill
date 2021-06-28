@@ -17,8 +17,8 @@
 </section>
 
 <!-- ======= Header Bishal ======= -->
-<header id="header" class="d-flex align-items-center">
-  <div class="container d-flex align-items-center justify-content-between">
+<header id="header" class="d-flex align-items-center ">
+  <div class="container d-flex align-items-center justify-content-between ">
 
     <h1 class="logo"><a href="{% url 'home' %}">Skill Drill<span>.</span></a></h1>
     <!-- Image logo rakhne bhaye -->
@@ -29,7 +29,7 @@
         <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
         <li><a class="nav-link scrollto" href="#about">About</a></li>
         <li><a class="nav-link scrollto" href="#featured-services">Services</a></li>
-        <li><a class="nav-link scrollto " href="#professionals">Professionals</a></li>
+        <li><a class="nav-link scrollto header-search header-search-lightbox" href="#professionals">Professionals</a></li>
         <li><a class="nav-link scrollto" href="#team">Team</a></li>
         <!-- Dropdown Menu Rakhne bhaye -->
         <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -52,8 +52,8 @@
 
         <li><a class="nav-link scrollto" href="#blog">Blog</a></li>
         <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        <li>
-            {% if user.is_authenticated %}
+
+        {% if user.is_authenticated %}
 
                   <li class="nav-item">
                       <a class="nav-link dropdown-toggle" href="#" id="userMenu"
@@ -87,7 +87,6 @@
 
 
             {% endif %}
-        </li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
