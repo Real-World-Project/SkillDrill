@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}
+{% load socialaccount %}
+{% load crispy_forms_tags %}
+<title>SkillDrill</title>
+
+{% endblock %}
+
+{% block body %}
+{% include 'navbar.html' %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 card mb-4 mt-3 left top">
+                <h2>Log In</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn btn-success ml-2" type="submit">Log In</button>
+                </form>
+            </div>
+        </div>
+        <a href="http://127.0.0.1:8000/accounts/signup/"><button class="btn btn-success ml-2" >Sign Up</button></a>
+        <a href="{% provider_login_url 'google' %}"><button>Login With Google</button></a>
+    </div>
+
+
+{% endblock %}

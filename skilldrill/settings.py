@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'services',
     'locations',
     'crispy_forms',
+    'blog',
+    'accounts',
 
     # authentication app
     'django.contrib.sites',
@@ -111,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-SITE_ID = 2
+
 
 # authentication backend
 AUTHENTICATION_BACKENDS = [
@@ -124,11 +126,25 @@ AUTHENTICATION_BACKENDS = [
 
 ]
 
+
+
+SITE_ID = 2
+
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_UNIQUE_EMAIL = True
+
+
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'mail.techiswell.com'
 EMAIL_HOST_USER = 'noreply@techiswell.com'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-EMAIL_HOST_PASSWORD = '1234567890'
+EMAIL_HOST_PASSWORD = 'Tahaxaina@1'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 EMAIL_USE_TLS = False
@@ -161,5 +177,5 @@ STATIC_DIR = os.path.join(BASE_DIR, "skilldrill/static")
 STATICFILES_DIRS = [STATIC_DIR]
 
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
