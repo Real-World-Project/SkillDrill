@@ -20,13 +20,20 @@
   <div class="container rounded">
 
     <div class="row justify-content-center">
-      {% for service in services %}
+      {% for cats in category %}
 
-      <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
+      <!-- <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" type="button" data-toggle="modal" data-target="#modalCate">
         <div class="icon-box d-flex ">
           <div class="icon"><i class="bx bx-paint-roll"></i></div>
-          <h4 class="title"><a href="{{ locations.location }}/{{ service.title }}" target="#exampleModal">{{ service.title }}</a></h4>
-          <!-- TODO: glightbox -->
+          <h4 class="title">{{ cats.title }}</h4>
+        </div>
+      </div> -->
+
+      <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" type="button" data-toggle="modal" data-target=#modalCate>
+        <div class="icon-box d-flex ">
+          <div class="icon"><i class="bx bx-paint-roll"></i></div>
+          <!-- <h4 class="title"><a href="{{ locations.location }}/{{ cats.title }}" >{{ cats.title }}</a></h4> -->
+          <h4 class="title">{{ cats.category }}</h4>
         </div>
       </div>
       {% empty %}
@@ -39,6 +46,39 @@
   </div>
 </section>
 
+
+<!--Categories: Block Content-->
+<section>
+  <!-- Modal -->
+  <div class="modal fade right" id="modalCate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="true">
+    <div class="modal-dialog modal-full-height modal-right" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title mx-auto">Choose Category</h5>
+        </div>
+        <div class="modal-body">
+          <div class="text-center mt-4">
+
+          </div>
+          <div class="form-check mb-4">
+            <table class="table">
+              {% for service in services %}
+              <tr>
+                <!-- <td><a href="{{ locations.location }}/{{ service.category }}/Pedicure">{{ service.title }}</a></td> -->
+                <td><a href="{{ locations.location }}/{{ service.title }}" >{{ service.title }}</a></td>
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!--Section: Block Content-->
 
 
 
