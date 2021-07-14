@@ -3,11 +3,18 @@ from .models import Location, Services, Category
 
 # Create your views here.
 
+# def location(request, location_name): #, service_id
+#     locations = Location.objects.get(location=location_name)
+#     category = Category.objects.all()
+#     return render(request, "locations/location.html",{
+#         "locations":locations, "services":locations.services.all(), "category":category
+#     })
+
 def location(request, location_name): #, service_id
     locations = Location.objects.get(location=location_name)
     category = Category.objects.all()
     return render(request, "locations/location.html",{
-        "locations":locations, "services":locations.services.all(), "category":category
+        "locations":locations, "services":locations.services.all(), "category":locations.services.all()
     })
 
 def category(request, category_name):
