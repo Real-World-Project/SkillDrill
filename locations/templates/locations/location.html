@@ -11,8 +11,7 @@
 <!-- <section id="lochero" style="background-image: url({% static 'locations.cover' %});" class="d-flex align-items-center"> -->
   <div class="container" data-aos="zoom-out" data-aos-delay="100">
     <h1>{{ locations.location }}</h1>
-    <h1>{{ locations.cover }}</h1>
-    <img src="{{ location.cover }}" alt="">
+    <img src="{{ locations.cover.url }}" alt="{{ location.location }}">
 
     <h4>Here goes the services available to {{ locations.location }}</h4>
 
@@ -24,24 +23,28 @@
   <div class="container rounded">
 
     <div class="row justify-content-center">
-      {% for cats in category %}
+      {% for cats in services %}
+        {% if cats.category %}
 
-      <!-- <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" type="button" data-toggle="modal" data-target="#modalCate">
-        <div class="icon-box d-flex ">
-          <div class="icon"><i class="bx bx-paint-roll"></i></div>
-          <h4 class="title">{{ cats.title }}</h4>
-        </div>
-      </div> -->
+          <!-- <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" type="button" data-toggle="modal" data-target="#modalCate">
+            <div class="icon-box d-flex ">
+              <div class="icon"><i class="bx bx-paint-roll"></i></div>
+              <h4 class="title">{{ cats.title }}</h4>
+            </div>
+          </div> -->
 
-      <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" type="button" data-toggle="modal" data-target=#modalCate>
-        <div class="icon-box d-flex ">
-          <div class="icon"><i class="bx bx-paint-roll"></i></div>
-          <!-- <h4 class="title"><a href="{{ locations.location }}/{{ cats.title }}" >{{ cats.title }}</a></h4> -->
-          <h4 class="title">{{ cats.category }}</h4>
-        </div>
-      </div>
+          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" type="button" data-toggle="modal" data-target=#modalCate>
+            <div class="icon-box d-flex ">
+              <div class="icon"><i class="bx bx-paint-roll"></i></div>
+              <!-- <h4 class="title"><a href="{{ locations.location }}/{{ cats.title }}" >{{ cats.title }}</a></h4> -->
+
+                <h4 class="title">{{ cats.category }}</h4>
+              
+            </div>
+          </div>
+        {% endif %}
       {% empty %}
-      <h3>No Services Available</h3>
+      <h3>No Services Available in This Location Right Now.</h3>
 
       {% endfor %}
 
@@ -58,7 +61,7 @@
     <div class="modal-dialog modal-full-height modal-right" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title mx-auto">Choose Category</h5>
+          <h5 class="modal-title mx-auto">Choose Services</h5>
         </div>
         <div class="modal-body">
           <div class="text-center mt-4">

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'blog',
     'accounts',
+    'adminpanel',
 
     # authentication app
     'django.contrib.sites',
@@ -175,6 +176,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_DIR = os.path.join(BASE_DIR, "skilldrill/static")
 STATICFILES_DIRS = [STATIC_DIR]
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "skilldrill/media")
 
 
 LOGIN_REDIRECT_URL = 'home'
