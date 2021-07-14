@@ -1,10 +1,4 @@
 
-{% block title %}
-Blogs
-
-{% endblock title %}
-
-
 {% block content %}
 
 {% for post in object_list %}
@@ -20,7 +14,7 @@ Blogs
     {{ post.body }}
 </div>
     <div class="card-footer text-center text-muted">
-        <a href="#">Edit</a> | <a href="#">Delete</a>
+        <a href="#">Edit</a> | <a href="#">Delete</a> | <a href="{% url 'post_detail' post.pk  %}" class="btn btn-primary">Read More &rarr;</a>
     </div>
 </div>
 <br/>

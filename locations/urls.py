@@ -9,6 +9,3 @@ urlpatterns = [
     path('<str:location_name>/<str:service_name>', views.service, name="service")
 
 ]
-# 
-# if settings.DEBUG:
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
