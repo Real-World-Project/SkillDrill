@@ -15,12 +15,14 @@ CATEGORY_CHOICES = (
     ('Beauty','Beauty')
 )
 
+
 class Location(models.Model):
     location = models.CharField(max_length=200, null=True)
     # cover = models.FileField(upload_to='skilldrill/static/img/location', default='img/location/kathmandu.jpeg')
 
     def __str__(self):
         return f"{self.id}. {self.location}"
+
 
 class Category(models.Model):
     category = models.CharField(max_length=200)
@@ -30,15 +32,15 @@ class Category(models.Model):
     def __str__(self):
         return self.category
 
+
 class Services(models.Model):
     category = models.ForeignKey(Category, null=True, on_delete=models.CASCADE, related_name="rel_cat")
     title = models.CharField(max_length=200)
     charge = models.IntegerField()
     time = models.IntegerField(null=True)
     description = models.CharField(max_length=2000, null=True)
-    professional = models.CharField(max_length=100) #Todo: Many to Many
-    location = models.ManyToManyField(Location, blank=True, related_name="services")
-
+    professional = models.CharField(max_length=100)  # Todo: Many to Many
+    location = models.ManyToManyField(Location, related_name="services")
 
     def __str__(self):
         return f"{self.title}: {self.charge}"

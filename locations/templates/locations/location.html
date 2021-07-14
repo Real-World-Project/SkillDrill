@@ -20,7 +20,7 @@
   <div class="container rounded">
 
     <div class="row justify-content-center">
-      {% for cats in category %}
+      {% for cats in services %}
 
       <!-- <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" type="button" data-toggle="modal" data-target="#modalCate">
         <div class="icon-box d-flex ">
@@ -37,7 +37,7 @@
         </div>
       </div>
       {% empty %}
-      <h3>No Services Available</h3>
+      <h3>No Services Available in This Location Right Now.</h3>
 
       {% endfor %}
 
@@ -54,7 +54,7 @@
     <div class="modal-dialog modal-full-height modal-right" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title mx-auto">Choose Category</h5>
+          <h5 class="modal-title mx-auto">Choose Services</h5>
         </div>
         <div class="modal-body">
           <div class="text-center mt-4">
