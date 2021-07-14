@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}
+<title>SkillDrill</title>
+
+{% endblock %}
+
+{% block body %}
+{% include 'blog_nav.html' %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+      <div class="card-body">
+
+        <p class=" text-muted">{{ post.author }} | {{ post.date }}</p>
+        <p class="card-text ">{{ post.body | safe }}</p>
+
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+    </div>
+  </section>
+  <!-- contact Section Ends -->
+
+</main>
+
+
+{% endblock %}

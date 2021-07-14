@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail, BadHeaderError
 from locations.models import Location
+from blog.models import Post
 from .forms import ContactForm
 # Create your views here.
 
@@ -34,4 +35,4 @@ def home(request):
 
     form = ContactForm()
     return render(request, "home/home.html", {
-        "locations": Location.objects.all(),'form': form} )
+        "locations": Location.objects.all(), 'form': form, "posts": Post.objects.all()})

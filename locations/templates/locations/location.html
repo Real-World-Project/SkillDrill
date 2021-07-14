@@ -7,16 +7,15 @@
 
 {% block body %}
 {% include 'servicesNavbar.html' %}
-<section id="hero" style="background-image: url('{{ locations.cover.url }}');" class="d-flex align-items-center">
-<!-- <section id="lochero" style="background-image: url({% static 'locations.cover' %});" class="d-flex align-items-center"> -->
+<section id="lochero" class="d-flex align-items-center">
   <div class="container" data-aos="zoom-out" data-aos-delay="100">
     <h1>{{ locations.location }}</h1>
-
+<!--    <img src="{{ locations.cover.url }}" alt="{{ location.location }}">-->
+    <h1>{{ locations.cover.url }}</h1>
     <h4>Here goes the services available to {{ locations.location }}</h4>
 
   </div>
 </section>
-
 
 <section id="featured-services" class="featured-services">
   <div class="container rounded">
@@ -38,7 +37,7 @@
               <!-- <h4 class="title"><a href="{{ locations.location }}/{{ cats.title }}" >{{ cats.title }}</a></h4> -->
 
                 <h4 class="title">{{ cats.category }}</h4>
-
+              
             </div>
           </div>
         {% endif %}
