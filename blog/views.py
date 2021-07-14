@@ -5,8 +5,5 @@ from django.views import generic
 # Create your views here.
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
-    template_name = 'home.html'
-
-class PostDetail(generic.DetailView):
-    model = Post
     template_name = 'blog.html'
+    paginate_by = 5
