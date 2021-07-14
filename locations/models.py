@@ -18,7 +18,7 @@ CATEGORY_CHOICES = (
 
 class Location(models.Model):
     location = models.CharField(max_length=200, null=True)
-    # cover = models.FileField(upload_to='skilldrill/static/img/location', default='img/location/kathmandu.jpeg')
+    cover = models.FileField(upload_to='img/location', default='img/location/lalitpur.jpeg')
 
     def __str__(self):
         return f"{self.id}. {self.location}"

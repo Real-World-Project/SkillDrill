@@ -178,5 +178,9 @@ STATIC_DIR = os.path.join(BASE_DIR, "skilldrill/static")
 STATICFILES_DIRS = [STATIC_DIR]
 
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "skilldrill/media")
+
+
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
