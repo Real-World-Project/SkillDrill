@@ -18,6 +18,12 @@
 
             {{ services.time }} min</p>
           <p>{{ services.description }}</p>
+
+          <form action="#" method="POST">
+            {% csrf_token %}
+            <input type="text" name="services" value="{{ services.id }}">
+            <button type="submit" class="btn btn-primary float-right">Add to Cart</button>
+          </form>
         </div>
       </section>
 
