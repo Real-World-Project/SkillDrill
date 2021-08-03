@@ -1,0 +1,41 @@
+{% extends "layout.html" %} {% load static %} {% block title %}
+<title>SkillDrill</title>
+
+{% endblock %} {% block body %} {% include 'professionalNav.html' %}
+<style>
+    #profile1{
+    background-color:lightyellow;
+    width:1300px;
+    margin-left:200px;
+    text-align:center;
+    margin-top:20px;
+
+
+
+
+    }
+    #profile1 p,h5{
+    padding:10px;
+    font-family:"Poppins", sans-serif;
+    }
+    h4{
+    text-align:center;
+    color: #106eea;
+    font-family:"Poppins", sans-serif;
+    margin-top:20px;
+    }
+
+</style>
+<h4>3 steps away from getting new customers</h4>
+<div id="profile1">
+
+    <h5>1. Complete your profile</h5>
+    <p>Add a profile photo, describe your service, enter your information,
+        add your service location and ask for a review to create an awesome profile.</p>
+    <h5>2. Profile verification and approval</h5>
+    <p>To offer good quality services to customers, each professional on the platform ha sto fulfill minimum requirements of experience and skill. please provide us much information as possible in your profile so we can take a decision.</p>
+    <h5>Buys credits and Respond to Leads</h5>
+    <p>SkillDrill is a rapid platform. Once approved, you have to buy a pack of credits which can be used to respond to customer leads that are suitable to you.</p>
+    <a href="detail" class="btn btn-primary" style="width:300px; margin-bottom:50px;">Create your profile</a>
+</div>
+{% endblock %}
