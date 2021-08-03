@@ -1,23 +1,54 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}
+<title>SkillDrill</title>
 
-{% block content %}
+{% endblock %}
 
-{% for post in object_list %}
+{% block body %}
+{% include 'blog_nav.html' %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+      <div class="card-body">
+
+        {% for post in object_list %}
 
 
-<div class="card">
-<div class="card-header">
-<span class="font-weight-bold">{{ post.title }}</span> &middot;
-<span class="text-muted">by {{ post.author }} |
-    {{ post.date }}</span>
-</div>
-<div class="card-body">
-    {{ post.body }}
-</div>
-    <div class="card-footer text-center text-muted">
-        <a href="#">Edit</a> | <a href="#">Delete</a> | <a href="{% url 'post_detail' post.pk  %}" class="btn btn-primary">Read More &rarr;</a>
+        <div class="card">
+            <div class="card-header">
+                <span class="font-weight-bold">{{ post.title }}</span> &middot;
+                <span class="text-muted">by {{ post.author }} |
+                    {{ post.date }}</span>
+            </div>
+            <div class="card-body">
+                {{ post.body }}
+            </div>
+                <div class="card-footer text-center text-muted">
+                    <a href="#">Edit</a> | <a href="#">Delete</a> | <a href="{% url 'post_detail' post.pk  %}" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+        </div>
+        <br/>
+
+            {% endfor %}
+
+
+      </div>
     </div>
-</div>
-<br/>
 
-{% endfor %}
-{% endblock content %}
+  </div>
+</div>
+
+
+
+
+    </div>
+  </section>
+  <!-- contact Section Ends -->
+
+</main>
+
+
+{% endblock %}
+
