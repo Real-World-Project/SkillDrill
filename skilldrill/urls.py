@@ -18,7 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.views import LogoutView, LoginView
-
+from professionals import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
@@ -26,6 +26,8 @@ urlpatterns = [
     path('services/', include('services.urls')),
     path('locations/', include('locations.urls')),
     path('accounts/', include('allauth.urls')),
+    path('professlogin',views.profesignup),
+    path('signup',views.finalsignup),
     # path('accounts/', include('accounts.urls')),
     # path('accounts/', include('django.contrib.auth.urls')),
     path('logout', LogoutView.as_view(), name='logout'),

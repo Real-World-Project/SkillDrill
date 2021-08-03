@@ -1,410 +1,471 @@
-{% extends "layout.html" %}
-{% load static %}
-{% block title %}
+{% extends "layout.html" %} {% load static %} {% block title %}
 <title>SkillDrill</title>
 
-{% endblock %}
-
-{% block body %}
-{% include 'navbar.html' %}
-
-{% load crispy_forms_tags %}
+{% endblock %} {% block body %} {% include 'navbar.html' %} {% load crispy_forms_tags %}
 <!-- ======= Hero Section Bishal ======= -->
 <section id="hero" style="background-image: url('static/img/cover3.jpg');" class="d-flex align-items-center">
-  <div class="container" data-aos="zoom-out" data-aos-delay="100">
-    <h1>Welcome to <span>Skill Drill</span>.</h1>
-    <h2>SkillDrill - platform that helps customers to book reliable services and a solution for unemployment. </h2>
-    <div class="d-flex">
-      <div class="btn-group">
-        <button type="button" class=" btn btn-outline-primary btn-lg dropdown-toggle" data-toggle="dropdown">Choose Your Location<span class="caret"></span></button>
-          <ul class="dropdown-menu scrollable-menu" role="menu">
-          {% for location in locations %}
-          <li><a href="locations/{{ location.location }}">{{ location }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+        <h1>Welcome to <span>Skill Drill</span>.</h1>
+        <h2>SkillDrill - platform that helps customers to book reliable services and a solution for unemployment. </h2>
+        <div class="d-flex">
+            <div class="btn-group">
+                <button type="button" class=" btn btn-outline-primary btn-lg dropdown-toggle" data-toggle="dropdown">Choose Your Location<span class="caret"></span></button>
+                <ul class="dropdown-menu scrollable-menu" role="menu">
+                    {% for location in locations %}
+                    <li><a href="locations/{{ location.location }}">{{ location }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
-</section><!-- End Hero -->
+</section>
+<!-- End Hero -->
 
 <!-- Our Team section -->
 
 <!-- ======= About Section ======= -->
 <section id="about" class="about section-bg">
-  <div class="container" data-aos="fade-up">
-    <div class="section-title">
-      <h2>About</h2>
-      <h3>Find Out More <span>About Us</span></h3>
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>About</h2>
+            <h3>Find Out More <span>About Us</span></h3>
+        </div>
+        <p>
+            SkillDrill is an online marketplace for local services where services like Repair & maintenance, home cleaning, homecare & design, pest control, packers & movers, business services, event management, weddings & party management, health & wellness, salon,
+            and other local services are all available on SkillDrill. It helps customers to book reliable home services like plumbing, carpentry, painting and so on. It creates job opportunity for millions of jobless people. Its vision is to empower service
+            professionals to deliver services at home like never seen before. Its main motto is to make people hassle free from wandering for service professionals.
+        </p>
     </div>
-    <p>
-      SkillDrill is an online marketplace for local services where services like Repair & maintenance, home cleaning,
-      homecare & design, pest control, packers & movers, business services, event management, weddings & party management,
-      health & wellness, salon, and other local services are all available on SkillDrill. It helps customers to book reliable
-      home services like plumbing, carpentry, painting and so on. It creates job opportunity for millions of jobless people.
-      Its vision is to empower service professionals to deliver services at home like never seen before. Its main motto is to make
-      people hassle free from wandering for service professionals.
-    </p>
-  </div>
 </section>
 
 <main id="main">
 
-  <!-- ======= Featured Services Section Bishal ======= -->
-  <section id="featured-services" class="featured-services">
-    <div class="container" data-aos="fade-up">
-      <div class="section-title">
-        <h2>Services</h2>
-        <h3>Check our <span>Services</span></h3>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bx bx-paint-roll"></i></div>
-            <h4 class="title"><a href="">Painter</a></h4>
-            <p class="description">On-Time Mess-free Experience</p>
-            <p class="description">High Quality Paints with Transparent Cost</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="bx bx-chip"></i></div>
-            <h4 class="title"><a href="">Repair Appliances</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i class="bx bx-spa"></i></div>
-            <h4 class="title"><a href="">Home Spa</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="bx bxs-virus-block"></i></div>
-            <h4 class="title"><a href="">Disinfecter</a></h4>
-            <p class="description"> Treatment Services with Technical Advance Amenities</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bx bxl-zoom"></i></div>
-            <h4 class="title"><a href="">Photographer</a></h4>
-            <p class="description">Capture beautiful memories in High Quality.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="bx bx-bug"></i></div>
-            <h4 class="title"><a href="">Chemical Guy</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i class="bx bx-dumbbell"></i></div>
-            <h4 class="title"><a href="">Trainer</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="bx bxs-baby-carriage"></i></div>
-            <h4 class="title"><a href="">Child Care</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Featured Services Section -->
-
-  <!-- Professionals Section -->
-  <section id="professionals" class="professionals section-bg">
-    <div class="container" data-aos="fade-up">
-      <div class="section-title">
-        <h2>Professionals</h2>
-        <h3>Heartly Welcome <span>Professionals</span></h3>
-      </div>
-    </div>
-  </section>
-  <!-- Professional Section Ends -->
-
-  <!-- Our Team section -->
-  <section id="team" class="team section-bg">
-    <div id="rs-team" class="rs-team fullwidth-team pt-100 pb-70 mt-3">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Team</h2>
-        <h3>Our Hardworking <span>Team</span></h3>
-        <div class="row d-flex justify-content-center ">
-          <div class="col-lg-4 col-md-6 ">
-            <div class="member team-item">
-              <div class="team-img">
-                <img src="{% static 'img/team/banish.jpg' %}" alt="team Image">
-                <div class="normal-text">
-                  <h4 class="team-name">Banish Sapkota</h4>
-                </div>
-              </div>
-              <div class="team-content">
-                <div class="display-table">
-                  <div class="display-table-cell">
-                    <div class="share-icons">
-                      <div class="border"></div>
-                      <ul class="team-social icons-1">
-                        <li><a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="https://mobile.twitter.com/SapkotaBanish" class="social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
-                        </li>
-                      </ul>
-
-                      <ul class="team-social icons-2">
-                        <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
-                        </li>
-                        <li><a href="https://www.linkedin.com/in/banish-sapkota-2139a1198/" class="social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="team-details">
-                      <h4 class="team-name text-white-50">
-                        Banish Sapkota
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <!-- ======= Featured Services Section Bishal ======= -->
+    <section id="featured-services" class="featured-services">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Services</h2>
+                <h3>Check our <span>Services</span></h3>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="member team-item">
-              <div class="team-img">
-                <img src="{% static 'img/team/bishal.jpg' %}" alt="team Image">
-                <div class="normal-text">
-                  <h4 class="team-name">Bishal Raj Shrestha</h4>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon"><i class="bx bx-paint-roll"></i></div>
+                        <h4 class="title"><a href="">Painter</a></h4>
+                        <p class="description">On-Time Mess-free Experience</p>
+                        <p class="description">High Quality Paints with Transparent Cost</p>
+                    </div>
                 </div>
-              </div>
-              <div class="team-content">
-                <div class="display-table">
-                  <div class="display-table-cell">
-                    <div class="share-icons">
-                      <div class="border"></div>
-                      <ul class="team-social icons-1">
-                        <li><a href="https://www.facebook.com/bishalrajshrestha1" class="social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="https://mobile.twitter.com/BishalRajShres1" class="social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
-                        </li>
-                      </ul>
 
-                      <ul class="team-social icons-2">
-                        <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
-                        </li>
-                        <li><a href="https://www.linkedin.com/in/bishalrajshrestha/" class="social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                      </ul>
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bx bx-chip"></i></div>
+                        <h4 class="title"><a href="">Repair Appliances</a></h4>
+                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
                     </div>
-                    <div class="team-details">
-                      <h4 class="team-name text-white-50">
-                        Bishal Raj Shrestha
-                      </h4>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="member team-item">
-              <div class="team-img">
-                <img src="{% static 'img/team/kiran.jpg' %}" alt="team Image">
-                <div class="normal-text">
-                  <h4 class="team-name">Kiran Kumari Giri</h4>
-                </div>
-              </div>
-              <div class="team-content">
-                <div class="display-table">
-                  <div class="display-table-cell">
-                    <div class="share-icons">
-                      <div class="border"></div>
-                      <ul class="team-social icons-1">
-                        <li><a href="https://www.facebook.com/anushka.giri.7359" class="social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
-                        </li>
-                      </ul>
 
-                      <ul class="team-social icons-2">
-                        <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
-                        </li>
-                        <li><a href="https://www.linkedin.com/in/kiran-kumari-giri-7604871a4/" class="social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                      </ul>
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon"><i class="bx bx-spa"></i></div>
+                        <h4 class="title"><a href="">Home Spa</a></h4>
+                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
                     </div>
-                    <div class="team-details">
-                      <h4 class="team-name text-white-50">
-                        Kiran Kumari Giri
-                      </h4>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="member team-item">
-              <div class="team-img">
-                <img src="{% static 'img/team/sagar.jpg' %}" alt="team Image">
-                <div class="normal-text">
-                  <h4 class="team-name">Sagar Prasad Chaulagain</h4>
-                </div>
-              </div>
-              <div class="team-content">
-                <div class="display-table">
-                  <div class="display-table-cell">
-                    <div class="share-icons">
-                      <div class="border"></div>
-                      <ul class="team-social icons-1">
-                        <li><a href="https://www.facebook.com/sagarprasadchaulagain" class="social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="https://mobile.twitter.com/Sagarpd2056" class="social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
-                        </li>
-                      </ul>
 
-                      <ul class="team-social icons-2">
-                        <li><a href="https://join.skype.com/invite/wAYBiHF9oqhu" class="social-icon" target="_blank"><i class="fa fa-skype"></i></a>
-                        </li>
-                        <li><a href="https://www.linkedin.com/in/sagar-prasad-chaulagain-8834a8188/" class="social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                      </ul>
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon"><i class="bx bxs-virus-block"></i></div>
+                        <h4 class="title"><a href="">Disinfecter</a></h4>
+                        <p class="description"> Treatment Services with Technical Advance Amenities</p>
                     </div>
-                    <div class="team-details">
-                      <h4 class="team-name text-white-50">
-                        Sagar Prasad Chaulagain
-                      </h4>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="member team-item">
-              <div class="team-img">
-                <img src="{% static 'img/team/achbj.jpg' %}" alt="team Image">
-                <div class="normal-text">
-                  <h4 class="team-name">Bijaya Acharya</h4>
-                </div>
-              </div>
-              <div class="team-content">
-                <div class="display-table">
-                  <div class="display-table-cell">
-                    <div class="share-icons">
-                      <div class="border"></div>
-                      <ul class="team-social icons-1">
-                        <li><a href="https://www.facebook.com/ach.bj10" class="social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="https://twitter.com/achbj10" class="social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
-                        </li>
-                      </ul>
 
-                      <ul class="team-social icons-2">
-                        <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
-                        </li>
-                        <li><a href="https://www.linkedin.com/in/bj-acharya-522a62153/" class="social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                      </ul>
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon"><i class="bx bxl-zoom"></i></div>
+                        <h4 class="title"><a href="">Photographer</a></h4>
+                        <p class="description">Capture beautiful memories in High Quality.</p>
                     </div>
-                    <div class="team-details">
-                      <h4 class="team-name text-white-50">
-                        Bijaya Acharya
-                      </h4>
-                    </div>
-                  </div>
                 </div>
-              </div>
+
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bx bx-bug"></i></div>
+                        <h4 class="title"><a href="">Chemical Guy</a></h4>
+                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon"><i class="bx bx-dumbbell"></i></div>
+                        <h4 class="title"><a href="">Trainer</a></h4>
+                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon"><i class="bx bxs-baby-carriage"></i></div>
+                        <h4 class="title"><a href="">Child Care</a></h4>
+                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                    </div>
+                </div>
+
             </div>
-          </div>
+
         </div>
-      </div>
-      <!-- .container-fullwidth -->
-    </div>
-  </section>
-  <!-- Team Section Ends -->
-
-<!--  blog section-->
-  <section id="blog" class="blog section-bg">
-    <div class="container" data-aos="fade-up">
-      <div class="section-title">
-        <h2>Blog</h2>
-        <h3>Read Our<span> WebLog</span></h3>
-        {% for post in posts %}
-          <div class="card mb-4 shadow hover bg-light">
-            <div class="card-body">
-              <h2 class="card-title">{{ post.title }}</h2>
-              <p class="card-text text-muted h6">{{ post.author }} | {{ post.date}}</p>
-              <p class="card-text">{{ post.body|safe|slice:":400" }}</p>
-              <a href="{% url 'post_detail' post.pk  %}" class="btn btn-primary">Read More &rarr;</a>
-            </div>
-          </div>
-        {% endfor %}
-      <div><button class="btn btn-success ml-2 " type="submit"><a href="blog">Read More...</a></button></div>
-      </div>
-    </div>
     </section>
-<!--  blog section ends-->
+    <!-- End Featured Services Section -->
 
-  <!-- contact Section -->
-  <section id="contact" class="contact section-bg">
-    <div class="container" data-aos="fade-up">
-      <div class="section-title">
-        <h2>Contact Us</h2>
-        <h3>You can <span>Get Us Through</span></h3>
-      </div>
-      <iframe style="border:0; width: 100%; height: 270px;"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.3590058861378!2d85.32785091535318!3d27.706199732148587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190a74aa1f23%3A0x74ebef82ad0e5c15!2sSoftwarica%20College%20of%20IT%20%26%20E-Commerce!5e0!3m2!1sen!2snp!4v1624632961198!5m2!1sen!2snp"
-        frameborder="0" allowfullscreen></iframe>
-    </div>
+    <!-- Professionals Section -->
+    <section id="professionals" class="professionals section-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Professionals</h2>
+                <h3>Heartly Welcome <span>Professionals</span></h3>
+            </div>
+            <div class="card-deck">
+                <div class="card" style="width:300px">
+                    <img class="card-img-top" src="{% static 'img/professionals/painter vish.jpeg' %}" alt="Card image" style="height:200px">
+                    <div class="card-body">
+                        <h4 class="card-title">Satya Ranjan </h4>
+                        <p class="card-text">Mastermarg-14, Kalanki</p>
+                        <p class="card-text">Rs.400 Per hour</p>
+                        <div>
+                            <span class="fa fa-star checked" style="color:orange"></span>
+                            <span class="fa fa-star checked" style="color:orange"></span>
+                            <span class="fa fa-star checked" style="color:orange"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+                <div class="card" style="width:300px">
+                    <img class="card-img-top" src="{% static 'img/professionals/plumber1.jpeg' %}" alt="Card image" style="height:200px">
+                    <div class="card-body">
+                        <h4 class="card-title">Sadakath Ali Khan</h4>
+                        <p class="card-text">Baneshwor, kathmandu</p>
+                        <p class="card-text">Rs.350 Per hour</p>
+                        <div>
+                            <span class="fa fa-star checked" style="color:orange"></span>
+                            <span class="fa fa-star checked" style="color:orange"></span>
+                            <span class="fa fa-star checked" style="color:orange"></span>
+                            <span class="fa fa-star checked" style="color:orange"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+                <div class="card" style="width:300px">
+                    <img class="card-img-top" src="{% static 'img/professionals/photographer.webp' %}" alt="Card image" style="height:200px">
+                    <div class="card-body">
+                        <h4 class="card-title">M Gopi</h4>
+                        <p class="card-text">Surbinayak,Lalitpur</p>
+                        <p class="card-text">Rs.250 Per hour</p>
+                        <div>
+                            <span class="fa fa-star checked" style="color:orange"></span>
+                            <span class="fa fa-star checked" style="color:orange"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+                <div class="card" style="width:300px">
+                    <img class="card-img-top" src="{% static 'img/professionals/trainer.jpg' %}" alt="Card image" style="height:200px">
+                    <div class="card-body">
+                        <h4 class="card-title">KL Srinivas</h4>
+                        <p class="card-text">purano kalimati, Bafal</p>
+                        <p class="card-text">Rs.300 Per hour</p>
+                        <div>
+                            <span class="fa fa-star checked" style="color:orange"></span>
+                            <span class="fa fa-star checked" style="color:orange"></span>
+                            <span class="fa fa-star checked" style="color:orange"></span>
+                            <span class="fa fa-star checked" style="color:orange"></span>
+                            <span class="fa fa-star checked" style="color:orange"></span>
+                        </div>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+                <!--                Other section-->
 
 
-    
+            </div>
+            <h4 style="text-align:center;padding-top:50px;display:inline-block">Are You a professional looking to grow your service business? </h4>
+            <a href="professlogin" class="btn btn-primary" target="_blank">Join Now</a>
+        </div>
+    </section>
+    <!-- Professional Section Ends -->
 
-    <div class="container ">
-      <div class="row-cols-auto ">
-        <h3>Contact Us At</h3>
-        <p><b>Emails :</b> skilldrillproject@gmail.com</p>
-        <p><b>Phone :</b> +977 9876543210</p>
-        <p><b>Address :</b> Dillibazaar-Kathmandu - Nepal</p>
-      </div>
+    <!-- Our Team section -->
+    <section id="team" class="team section-bg">
+        <div id="rs-team" class="rs-team fullwidth-team pt-100 pb-70 mt-3">
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Team</h2>
+                <h3>Our Hardworking <span>Team</span></h3>
+                <div class="row d-flex justify-content-center ">
+                    <div class="col-lg-4 col-md-6 ">
+                        <div class="member team-item">
+                            <div class="team-img">
+                                <img src="{% static 'img/team/banish.jpg' %}" alt="team Image">
+                                <div class="normal-text">
+                                    <h4 class="team-name">Banish Sapkota</h4>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <div class="display-table">
+                                    <div class="display-table-cell">
+                                        <div class="share-icons">
+                                            <div class="border"></div>
+                                            <ul class="team-social icons-1">
+                                                <li><a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                                                </li>
+                                                <li><a href="https://mobile.twitter.com/SapkotaBanish" class="social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                </li>
+                                            </ul>
 
-      <!-- Pop up contact modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Leave your Message</button>
+                                            <ul class="team-social icons-2">
+                                                <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
+                                                </li>
+                                                <li><a href="https://www.linkedin.com/in/banish-sapkota-2139a1198/" class="social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="team-details">
+                                            <h4 class="team-name text-white-50">
+                                                Banish Sapkota
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="member team-item">
+                            <div class="team-img">
+                                <img src="{% static 'img/team/bishal.jpg' %}" alt="team Image">
+                                <div class="normal-text">
+                                    <h4 class="team-name">Bishal Raj Shrestha</h4>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <div class="display-table">
+                                    <div class="display-table-cell">
+                                        <div class="share-icons">
+                                            <div class="border"></div>
+                                            <ul class="team-social icons-1">
+                                                <li><a href="https://www.facebook.com/bishalrajshrestha1" class="social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                </li>
+                                                <li><a href="https://mobile.twitter.com/BishalRajShres1" class="social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                </li>
+                                            </ul>
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="row-cols-auto p-4">
-        <h3>Leave your Message</h3>
-        <form method="post">
-          {% csrf_token %}
-          {{ form|crispy }}
-          <button class="btn btn-success ml-2" type="submit">Send message</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+                                            <ul class="team-social icons-2">
+                                                <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
+                                                </li>
+                                                <li><a href="https://www.linkedin.com/in/bishalrajshrestha/" class="social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="team-details">
+                                            <h4 class="team-name text-white-50">
+                                                Bishal Raj Shrestha
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="member team-item">
+                            <div class="team-img">
+                                <img src="{% static 'img/team/kiran.jpg' %}" alt="team Image">
+                                <div class="normal-text">
+                                    <h4 class="team-name">Kiran Kumari Giri</h4>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <div class="display-table">
+                                    <div class="display-table-cell">
+                                        <div class="share-icons">
+                                            <div class="border"></div>
+                                            <ul class="team-social icons-1">
+                                                <li><a href="https://www.facebook.com/anushka.giri.7359" class="social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                </li>
+                                                <li><a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                                                </li>
+                                            </ul>
+
+                                            <ul class="team-social icons-2">
+                                                <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
+                                                </li>
+                                                <li><a href="https://www.linkedin.com/in/kiran-kumari-giri-7604871a4/" class="social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="team-details">
+                                            <h4 class="team-name text-white-50">
+                                                Kiran Kumari Giri
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="member team-item">
+                            <div class="team-img">
+                                <img src="{% static 'img/team/sagar.jpg' %}" alt="team Image">
+                                <div class="normal-text">
+                                    <h4 class="team-name">Sagar Prasad Chaulagain</h4>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <div class="display-table">
+                                    <div class="display-table-cell">
+                                        <div class="share-icons">
+                                            <div class="border"></div>
+                                            <ul class="team-social icons-1">
+                                                <li><a href="https://www.facebook.com/sagarprasadchaulagain" class="social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                </li>
+                                                <li><a href="https://mobile.twitter.com/Sagarpd2056" class="social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                </li>
+                                            </ul>
+
+                                            <ul class="team-social icons-2">
+                                                <li><a href="https://join.skype.com/invite/wAYBiHF9oqhu" class="social-icon" target="_blank"><i class="fa fa-skype"></i></a>
+                                                </li>
+                                                <li><a href="https://www.linkedin.com/in/sagar-prasad-chaulagain-8834a8188/" class="social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="team-details">
+                                            <h4 class="team-name text-white-50">
+                                                Sagar Prasad Chaulagain
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="member team-item">
+                            <div class="team-img">
+                                <img src="{% static 'img/team/achbj.jpg' %}" alt="team Image">
+                                <div class="normal-text">
+                                    <h4 class="team-name">Bijaya Acharya</h4>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <div class="display-table">
+                                    <div class="display-table-cell">
+                                        <div class="share-icons">
+                                            <div class="border"></div>
+                                            <ul class="team-social icons-1">
+                                                <li><a href="https://www.facebook.com/ach.bj10" class="social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                </li>
+                                                <li><a href="https://twitter.com/achbj10" class="social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                </li>
+                                            </ul>
+
+                                            <ul class="team-social icons-2">
+                                                <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
+                                                </li>
+                                                <li><a href="https://www.linkedin.com/in/bj-acharya-522a62153/" class="social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="team-details">
+                                            <h4 class="team-name text-white-50">
+                                                Bijaya Acharya
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- .container-fullwidth -->
+        </div>
+    </section>
+    <!-- Team Section Ends -->
+
+    <!--  blog section-->
+    <section id="blog" class="blog section-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Blog</h2>
+                <h3>Read Our<span> WebLog</span></h3>
+                {% for post in posts %}
+                <div class="card mb-4 shadow hover bg-light">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                        <p class="card-text text-muted h6">{{ post.author }} | {{ post.date}}</p>
+                        <p class="card-text">{{ post.body|safe|slice:":400" }}</p>
+                        <a href="{% url 'post_detail' post.pk  %}" class="btn btn-primary">Read More &rarr;</a>
+                    </div>
+                </div>
+                {% endfor %}
+                <div><button class="btn btn-success ml-2 " type="submit"><a href="blog">Read More...</a></button></div>
+            </div>
+        </div>
+    </section>
+    <!--  blog section ends-->
+
+    <!-- contact Section -->
+    <section id="contact" class="contact section-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <h3>You can <span>Get Us Through</span></h3>
+            </div>
+            <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.3590058861378!2d85.32785091535318!3d27.706199732148587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190a74aa1f23%3A0x74ebef82ad0e5c15!2sSoftwarica%20College%20of%20IT%20%26%20E-Commerce!5e0!3m2!1sen!2snp!4v1624632961198!5m2!1sen!2snp"
+                frameborder="0" allowfullscreen></iframe>
+        </div>
 
 
 
-    </div>
-  </section>
-  <!-- contact Section Ends -->
+
+        <div class="container ">
+            <div class="row-cols-auto ">
+                <h3>Contact Us At</h3>
+                <p><b>Emails :</b> skilldrillproject@gmail.com</p>
+                <p><b>Phone :</b> +977 9876543210</p>
+                <p><b>Address :</b> Dillibazaar-Kathmandu - Nepal</p>
+            </div>
+
+            <!-- Pop up contact modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Leave your Message</button>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="row-cols-auto p-4">
+                            <h3>Leave your Message</h3>
+                            <form method="post">
+                                {% csrf_token %} {{ form|crispy }}
+                                <button class="btn btn-success ml-2" type="submit">Send message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+    <!-- contact Section Ends -->
 
 </main>
 

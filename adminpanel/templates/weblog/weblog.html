@@ -1,0 +1,48 @@
+{% extends "adminlayout.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+    <title>Blog Panel</title>
+
+{% endblock %}
+{% block body %}
+
+ <div class="main-content">
+     <main>
+       <div class="row">
+            <div class="col-md-10 card mb-4  mt-3 left top">
+                <h2>SkillDrill. Blogs</h2>
+              <table class="table-striped container mt-5 ">
+                <tr>
+                    <th class="">ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Created On</th>
+                    <th>Read, Update, Delete</th>
+                    </tr>
+                    {% for post in post_list %}
+                    <tr class="">
+                        <td> {{ post.pk }} </td>
+                        <td> {{ post.title }} </td>
+                        <td>{{ post.author }} </td>
+                        <td>{{ post.date }}</td>
+                        <td>
+                            <a href="{% url 'blog_views' post.pk  %}" class="btn btn-sm btn-primary ">Read &rarr;</a>
+                            <a href="{% url 'edit_blog' post.pk  %}" class="btn btn-sm btn-success ">Update</a>
+                            <a href="{% url 'blog_delete' post.pk  %}" class="btn btn-sm btn-danger ">Delete</a>
+                        </td>
+
+
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+
+
+          </div>
+     </main>
+ </div>
+
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "adminlayout.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+    <title>Location Panel</title>
+
+{% endblock title %}
+
+{% block body %}
+    <div class="main-content">
+        <main>
+
+            <div class="container mr-auto">
+            <h1 class="text-center hds">Locations</h1><hr>
+            <div class="row ml-2" >
+            {% for location in object_list %}
+            <div class="col-md-4 mt-4">
+              <img class="imgs img-fluid img-thumbnail" src="{{location.cover.url}}" alt="" width="260" style="height:310px; ">
+              <p class="font-size" style="margin-top:6px;"><span style="font-family: ui-rounded; font-weight: bolder; font-size: 18px;">Location: </span><span style=" font-size:16px;">{{location.location}}</span></p>
+               
+              <a href="{% url 'edit_location' location.pk  %}" class="btn btn-primary">Update</a>
+              <a href="{% url 'location_delete' location.pk %}" class="btn btn-danger">Delete</a>
+            </div>
+
+            {% endfor %}
+            </div>
+  </div>
+
+<style>
+  .imgs{
+    box-shadow: 2px 5px 14px 1px gray;
+    border-radius: 4px;
+  }
+
+  .hds{
+      font-size: 36px !important;
+        font-family: vollkorn;
+        text-shadow: 10px 8px 6px gray;
+        font-weight: bold;
+        color: black !important;
+        text-align: center;
+  }
+  .imgs:hover{
+    box-shadow: 2px 5px 14px 1px brown;
+
+
+  }
+</style>
+{% endblock body %}
