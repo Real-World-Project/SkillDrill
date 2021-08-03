@@ -1,40 +1,89 @@
 {% extends 'layout.html' %}
-
+{% load static %}
 {% block title %}
-  <title>{{ locations.location }}</title>
+<title>{{ locations.location }}</title>
 {% endblock %}
 
 
 {% block body %}
-  {% include 'servicesNavbar.html' %}
-  <section id="lochero" class="d-flex align-items-center">
-    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+{% include 'servicesNavbar.html' %}
+<section id="hero" class="d-flex align-items-center" style="background-image:url('{{ locations.cover.url }}')">
+  <div class="container" data-aos="zoom-out" data-aos-delay="100">
     <h1>{{ locations.location }}</h1>
-
     <h4>Here goes the services available to {{ locations.location }}</h4>
-    <ul>
-      <h5>
-        <table class="table table-dark table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Services</th>
-      <th scope="col">Cost</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for service in services %}
-    <tr>
-      <td>{{ service.service }}</td>
-      <td>{{ service.charge }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-  </table>
+
+  </div>
+</section>
+
+<section id="featured-services" class="featured-services">
+  <div class="container rounded">
+
+    <div class="row justify-content-center">
+      {% for cats in services %}
+        {% if cats.category %}
+
+          <!-- <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" type="button" data-toggle="modal" data-target="#modalCate">
+            <div class="icon-box d-flex ">
+              <div class="icon"><i class="bx bx-paint-roll"></i></div>
+              <h4 class="title">{{ cats.title }}</h4>
+            </div>
+          </div> -->
+
+          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" type="button" data-toggle="modal" data-target=#modalCate>
+            <div class="icon-box d-flex ">
+              <div class="icon"><i class="bx bx-paint-roll"></i></div>
+              <!-- <h4 class="title"><a href="{{ locations.location }}/{{ cats.title }}" >{{ cats.title }}</a></h4> -->
+
+                <h4 class="title">{{ cats.category }}</h4>
+
+            </div>
+          </div>
+        {% endif %}
+      {% empty %}
+      <h3>No Services Available in This Location Right Now.</h3>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
 
 
-      </h5>
-    </ul>
+<!--Categories: Block Content-->
+<section>
+  <!-- Modal -->
+  <div class="modal fade right" id="modalCate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="true">
+    <div class="modal-dialog modal-full-height modal-right" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title mx-auto">Choose Services</h5>
+        </div>
+        <div class="modal-body">
+          <div class="text-center mt-4">
+
+          </div>
+          <div class="form-check mb-4">
+            <table class="table">
+              {% for service in services %}
+              <tr>
+                <!-- <td><a href="{{ locations.location }}/{{ service.category }}/Pedicure">{{ service.title }}</a></td> -->
+                <td><a href="{{ locations.location }}/{{ service.title }}" >{{ service.title }}</a></td>
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
   </div>
 
-  </section>
+</section>
+<!--Section: Block Content-->
+
+
+
+
 {% endblock %}

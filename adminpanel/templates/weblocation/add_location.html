@@ -1,0 +1,16 @@
+{% extends 'adminlayout.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    <title>Add Location</title>
+{% endblock %}
+{% block body %}
+    <div class="main-content">
+        <main>
+            <h1>New post</h1>
+            <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Save" />
+            </form>
+        </main>
+    </div>
+{% endblock body %}

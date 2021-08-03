@@ -48,10 +48,32 @@
           </ul>
         </li>-->
 
-        <li><button type="button" class="btn btn-dark">
-          <a class="text text-light" href="#login">Login</a>
-
-        </button></li>
+        {% if user.is_authenticated %}
+                  <li class="nav-item">
+                      <a class="nav-link dropdown-toggle" href="#" id="userMenu"
+                          data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false">
+                          <i class="fa fa-user mr-1 text-success"></i>{{ user.username }}
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                          <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
+                      </div>
+                  </li>
+            {% else %}
+                  <li class="nav-item">
+                      <a class="nav-link dropdown-toggle text-primary" href="#" id="usersMenu"
+                          data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false">
+                          <i class="fa fa-user mr-1 text-primary"></i>Accounts
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                          <a class="dropdown-item" href="{% url 'login' %}">Sign in</a>
+                          <a class="dropdown-item" href="http://127.0.0.1:8000/accounts/signup/">Sign Up</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="{#}">Password Reset</a>
+                      </div>
+                  </li>
+            {% endif %}
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->

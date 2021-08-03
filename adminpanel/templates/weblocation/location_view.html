@@ -1,0 +1,25 @@
+{% extends 'adminlayout.html' %}
+{% load static %}
+{% block title %}
+<title xmlns="http://www.w3.org/1999/html">Blog View</title>
+{% endblock %}
+
+{% block body %}
+    <div class="main-content">
+            <main>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-8 card mb-4  mt-3 left  top">
+                    <div class="card-body">
+                      <p class=" text-muted">{{ location.author }} | {{ location.date }}</p>
+                      <img class="card-img" src={{ location.cover.url }} alt="Avatar" style="width:100%">
+                      <p class="card-text ">{{ location.location | safe }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+    </div>
+{% endblock %}
+
+
