@@ -27,7 +27,7 @@ class DetailPostView(DetailView):
 
 class BlogCreateView(CreateView):
     model = Post
-    template_name = 'weblog/Create_New_Blog.html'
+    template_name = 'weblog/add_blog.html'
     fields = '__all__'
 
 
@@ -38,7 +38,7 @@ class weblocationView(ListView):
 
 class AddLocationView(CreateView):
     model = Location
-    template_name = 'weblocation/Add_Location.html'
+    template_name = 'weblocation/add_location.html'
     fields = '__all__'
 
 
@@ -48,9 +48,16 @@ class DetailLocationView(DetailView):
 
 
 class LocationUpdateView(UpdateView):
-    model = Post
-    template_name = 'weblocation/Edit_Location.html'
-    fields = ['location', 'cover']
+    model = Location
+    template_name = 'weblocation/edit_location.html'
+    fields = '__all__'
+    success_url = reverse_lazy('weblocation')
+
+
+class locationDeleteView(DeleteView):
+    model = Location
+    template_name = 'weblocation/location_delete.html'
+    success_url = reverse_lazy('weblocation')
 
 
 class webserviceView(ListView):

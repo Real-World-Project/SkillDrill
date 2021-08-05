@@ -1,0 +1,36 @@
+{% extends "layout.html" %} {% load static %} {% block title %}
+<title>SkillDrill</title>
+
+{% endblock %} {% block body %} {% include 'professionalNav.html' %}
+<section id="hero" style="background-image: url('static/img/professionals/background.jpg');" class="d-flex align-items-center">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+        <div class="text">
+            <h1>Welcome to <span>Skill Drill</span>.</h1>
+            <h4>Expand your <span> service business with SkillDrill</span>.</h4>
+            <h2>Join a community of 10000+ professionals who have successfully grown their business with SkillDrill. </h2>
+        </div>
+
+    </div>
+    <div class="signup">
+
+        <p>Become a skilldrill partner within minutes</p>
+        <select class="mydropdown" autofocus name="service">
+            <option>Choose your service</option>
+            <option value="Advertising services">Advertising services</option>
+            <option value="AC repair">AC repair</option>
+            <option value="Electrician">Electrician</option>
+            <option value="Mobile repair">Mobile repair</option>
+            <option value="plumbing">plumbing</option>
+            <option>cleaning</option>
+            <option>salon</option>
+            <option>wall paint</option>
+
+
+        </select>
+        <input type="number" placeholder="Enter your phone number" class="mydropdown" style="margin-top:30px">
+        <input type="submit" class="btn btn-primary" value="SignUp" style="margin-left:40px; margin-top:40px; width:300px">
+
+    </div>
+
+</section>
+{% endblock %}
