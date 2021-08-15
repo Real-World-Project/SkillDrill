@@ -8,9 +8,9 @@
 {% block body %}
     <div class="main-content">
         <main>
-            <h1>Edit post</h1>
-            <form action="" method="post">{% csrf_token %}
-                {{ form.as_p }}
+            <h1>Edit Location</h1>
+            <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                {{ form|crispy }}
                 <input type="submit" value="Update" />
             </form>
         </main>
