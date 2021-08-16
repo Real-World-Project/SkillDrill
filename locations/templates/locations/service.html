@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 {% load static %}
+{% load cart %}
 {% block title %}
 <title>{{ services.title }}</title>
 {% endblock %}
@@ -18,6 +19,35 @@
 
             {{ services.time }} min</p>
           <p>{{ services.description }}</p>
+          <!-- <h3>{{ services | is_in_cart:request.session.cart }}</h3> -->
+
+
+          <div class="card-footer p-0 ">
+            {% if services|is_in_cart:request.session.cart %}
+            <div class="row no-gutters" >
+              <form action="#" method="post" class="col-2">
+                {% csrf_token %}
+                <input hidden type="text" name="services" value="{{ services.id }}">
+                <input hidden type="text" name="remove" value='True'>
+                <input type="submit" value="-" class = "btn btn-block btn-secondary">
+              </form>              <div class="text-center col">{{ services|cart_quantity:request.session.cart }} in Cart</div>
+              <form action="#" method="post" class="col-2">
+                {% csrf_token %}
+                <input hidden type="text" name="services" value="{{ services.id }}">
+                <input type="submit" value="+" class = "btn btn-block btn-secondary">
+              </form>
+            </div>
+            {% else %}
+            <div class="row">
+              <form action="#" method="POST">
+                {% csrf_token %}
+                <input hidden type="text" name="services" value="{{ services.id }}">
+                <button type="submit" class="btn btn-block btn-primary float-right">Add to Cart</button>
+              </form>
+            </div>
+            {% endif %}
+
+          </div>
         </div>
       </section>
 
