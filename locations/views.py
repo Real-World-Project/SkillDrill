@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Location, Services, Category
+from django.views.generic import TemplateView
 
 # Create your views here.
 
@@ -57,3 +58,7 @@ def service(request, service_name, location_name):
     return render(request, "locations/service.html", {
         "services": services, "locations": locations
     })
+
+
+class CartView(TemplateView):
+    template_name = 'cart/cart.html'
