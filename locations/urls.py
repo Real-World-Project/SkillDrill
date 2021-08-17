@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import location, service, CartView
+from .views import location, service, CartView, CheckoutView
 
 urlpatterns = [
     path('<str:location_name>', location, name="location"),
@@ -8,5 +8,6 @@ urlpatterns = [
     # path('<str:location_name>/<str:category_name>/<str:service_name>', views.category, name="services"),
     path('<str:location_name>/<str:service_name>', service, name="service"),
     path('cart/', CartView.as_view(), name="cart"),
+    path('checkout', CheckoutView.as_view(), name="checkout"),
 
 ]

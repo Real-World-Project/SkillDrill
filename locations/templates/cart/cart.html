@@ -1,9 +1,84 @@
-{% extends "layout.html" %} {% load static %} {% block title %}
-<title>SkillDrill</title>
 
-{% endblock %} {% block body %} {% include 'navbar.html' %} {% load crispy_forms_tags %}
+{% extends "layout.html" %}
+{% load static %}
+{% load cart %}
+{% load custom_filter %}
+
+{% block title %}
+<title>Cart</title>
+
+{% endblock %}
+{% block body %}
+{% include 'navbar.html' %}
+{% load crispy_forms_tags %}
+<div class="container">
+  <div class="border rounder p-4 m-4">
+    <h3 class="display-4">Cart</h3>
+    <table class="table table-bordered table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Service Id</th>
+          <th>Service</th>
+          <th>Charge</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for service in services %}
+        <tr>
+          <td>{{ service.id }}</td>
+          <td>{{ service.title }}</td>
+          <td>{{ service.charge|currency }}</td>
+          <td>{{ service|cart_quantity:request.session.cart }}</td>
+          <td>{{ service|price_total:request.session.cart|currency }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="4">Total</th>
+          <th colspan="1">{{ services|total_cart_price:request.session.cart|currency }}</th>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="m-3 p-3">
+      <a href="#" data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-info border rounded col-lg-3 float-right">Check Out</a>
+    </div>
+  </div>
+</div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Checkout Form</h5><hr>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="m-2 p-2">
+          <form action="checkout" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="">Address</label>
+              <input type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+
+            <div class="form-group">
+              <label for="">Phone</label>
+              <input type="text" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+            <input type="submit" class="btn btn-outline-info col-lg-6 float-right" value="Checkout">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 {% endblock %}
