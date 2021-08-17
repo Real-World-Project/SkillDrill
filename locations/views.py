@@ -3,9 +3,7 @@ from .models import Location, Services, Category
 # from django.views.generic import TemplateView
 from django.views import View
 
-
 # Create your views here.
-
 
 def location(request, location_name):  # service_id
     locations = Location.objects.get(location=location_name)
@@ -72,3 +70,9 @@ class CartView(View):
         services = Services.get_services_by_id(ids)
         print(services)
         return render(request, 'cart/cart.html', {'services':services})
+
+
+class CheckoutView(View):
+    def post(self, request):
+        print(request.POST)
+        return redirect("cart")
