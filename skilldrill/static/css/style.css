@@ -1963,7 +1963,7 @@ ul {
     padding: 0.1px;
 }
 
-.modal-dialog {
+.moddi {
     position: fixed;
     margin: auto;
     width: 320px;
@@ -1971,11 +1971,9 @@ ul {
     right: 0px;
 }
 
-.modal-content {
+.modcont {
     height: 100%;
 }
 
 ©2021 GitHub,
 Inc. Terms Privacy Security Status Docs Contact GitHub Pricing API Training Blog About Loading complete
-
-

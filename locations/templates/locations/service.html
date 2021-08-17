@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 {% load static %}
 {% load cart %}
+{% load custom_filter %}
 {% block title %}
 <title>{{ services.title }}</title>
 {% endblock %}
@@ -13,7 +14,7 @@
         <div class="container rounded">
 
           <h3>{{ services.title }}</h3>
-          <h5>Rs.{{ services.charge }}</h5>
+          <h5>{{ services.charge|currency }}</h5>
           <p>
             <i class="bx bx-timer"></i>
 

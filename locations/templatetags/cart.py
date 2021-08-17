@@ -17,3 +17,14 @@ def cart_quantity(services, cart):
         if id == str(services.id):
             return cart.get(id)
     return 0;
+
+@register.filter(name='price_total')
+def price_total(services, cart):
+    return services.charge * cart_quantity(services, cart)
+
+@register.filter(name="total_cart_price")
+def total_cart_price(services, cart):
+    sum = 0;
+    for s in services:
+        sum += price_total(s, cart)
+    return sum
