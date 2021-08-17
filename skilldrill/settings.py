@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'blog',
     'accounts',
     'adminpanel',
+    'cart',
 
     # authentication app
     'django.contrib.sites',
