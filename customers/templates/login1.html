@@ -1,0 +1,61 @@
+
+{% extends "layout.html" %}
+{% load static %}
+{% load cart %}
+{% load custom_filter %}
+
+{% block title %}
+<title>Cart</title>
+
+{% endblock %}
+{% block body %}
+{% include 'navbar.html' %}
+
+<div class="container">
+    <div>
+        <div >
+            <div >
+
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Shopping_cart_with_food_clip_art_2.svg/307px-Shopping_cart_with_food_clip_art_2.svg.png" alt=""
+                class="" style="height: 150px;">
+            <!-- <hr> -->
+            <hr>
+            </div>
+            <h3 >Login Here</h3>
+            <form action="" method="POST">
+
+                {% csrf_token %}
+
+                {% if error%}
+                <div >
+                    {{error}}
+                </div>
+                {% endif %}
+                <!-- email -->
+                <div >
+                    <label for="">Email</label>
+                    <input required type="email" name="email" id=""
+                    value="{{values.email}}" placeholder="example@gmail.com">
+                </div>
+
+
+                <!-- password -->
+                <div >
+                    <label for="">Password</label>
+                    <input type="password"
+                    name="password" placeholder="********">
+                </div>
+
+                <hr>
+                <div >
+                    <input type="submit" value="Login">
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

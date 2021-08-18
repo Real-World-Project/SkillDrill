@@ -34,6 +34,7 @@ urlpatterns = [
     path('accounts/login/', LoginView.as_view(), name='login'),
     path('dashboard/', include('adminpanel.urls')),
     path('cart/', include('cart.urls')),
+    path('customers/', include('customers.urls')),
 ]
 
 
