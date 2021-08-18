@@ -69,8 +69,11 @@ class Order(models.Model):
     date = models.DateField(default=datetime.datetime.today)
 
     def __str__(self):
-        return f"{self.customer.id}. {self.customer}"
+        return f"{self.customer.id}"
 
+
+    def placeOrder(self):
+        self.save()
 
 
 
