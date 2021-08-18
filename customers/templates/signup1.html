@@ -1,0 +1,89 @@
+
+
+{% extends "layout.html" %}
+{% load static %}
+{% load cart %}
+{% load custom_filter %}
+
+{% block title %}
+<title>Cart</title>
+
+{% endblock %}
+{% block body %}
+{% include 'navbar.html' %}
+<div>
+
+    <div>
+
+
+        <div >
+            <div>
+
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Shopping_cart_with_food_clip_art_2.svg/307px-Shopping_cart_with_food_clip_art_2.svg.png" alt=""
+                class="" style="height: 150px;">
+            <!-- <hr> -->
+            <div class="display-8">Create An Account</div>
+            <hr>
+            </div>
+            <h3 >Create An Account</h3>
+            <form action="" method="POST">
+
+                {% csrf_token %}
+
+                {% if error%}
+                <div class="alert alert-danger" role="alert">
+                    {{error}}
+                </div>
+                {% endif %}
+                <!-- firstname -->
+                <div class="form-group">
+                    <label for="">First Name</label>
+                    <input type="text" name="firstname"
+                     id="" value="{{values.first_name}}" >
+                </div>
+
+                <!-- last name -->
+                <div >
+                    <label for="">Last Name</label>
+                    <input type="text" name="lastname"
+                    id="" value="{{values.last_name}}"
+                    >
+                </div>
+
+                <!-- phone -->
+                <div >
+                    <label for="">Phone</label>
+                    <input type="text" name="phone"
+                    value="{{values.phone}}"
+                    placeholder="565698959"
+                    >
+                </div>
+                <!-- email -->
+                <div >
+                    <label for="">Email</label>
+                    <input required type="email" name="email"
+                    value="{{values.email}}"
+                           placeholder="example@gmail.com">
+                </div>
+
+
+                <!-- password -->
+                <div >
+                    <label for="">Password</label>
+                    <input type="password"
+                    name="password"
+                           placeholder="********">
+                </div>
+
+                <hr>
+                <div class="form-group">
+                    <input type="submit" value="Create An Account ">
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

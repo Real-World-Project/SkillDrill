@@ -43,9 +43,10 @@ INSTALLED_APPS = [
     'professionals',
     'crispy_forms',
     'blog',
-    'accounts',
+    # 'accounts',
     'adminpanel',
     'cart',
+    'customers',
 
     # authentication app
     'django.contrib.sites',
