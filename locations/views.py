@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from .models import Location, Services, Category, Order
+from customers.models import Customer
+from django.contrib.auth.models import User
 # from django.views.generic import TemplateView
 from django.views import View
-from django.contrib.auth.models import User
-
 
 # Create your views here.
 
@@ -27,11 +27,11 @@ def service(request, service_name, location_name):
     locations = Location.objects.get(location=location_name)
     service = request.POST.get('services')
     remove = request.POST.get('remove')
-
     # request.session['services_id'] = services.id
     # request.session.get('cart').clear()
     cart = request.session.get('cart')
-    
+
+
     if not cart:
         request.session['cart'] = {}
 
@@ -80,17 +80,15 @@ class CheckoutView(View):
     def post(self, request):
         address = request.POST.get('address')
         phone = request.POST.get('phone')
-        customer = Order.objects.all()
-        # customer = Order.objects.get(id)
+        customer = request.session.get('customer')
         cart = request.session.get('cart')
         services = Services.get_services_by_id(list(cart.keys()))
 
-        # use = user.socialaccount_set.filter(provider='google')[0].extra_data['id']
-        # user_id= use.session.get('use')
-        print(address, phone , customer, services)
+        # print("---------------",customer)
+        # print("==============",services)
 
         for service in services:
-            order = Order(customer = customer,
+            order = Order(customer = Customer(id=customer),
                           service = service,
                           price = service.charge,
                           address = address,
@@ -98,4 +96,7 @@ class CheckoutView(View):
                           quantity = cart.get(str(service.id)))
 
             print(order.placeOrder())
+        # print("++++++++++++++++", customer)
+
+        print("----", address, phone, customer, cart, services)
         return redirect("cart")
