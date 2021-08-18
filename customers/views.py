@@ -17,14 +17,14 @@ class Signup1(View):
         phone = postData.get('phone')
         email = postData.get('email')
         password = postData.get('password')
-        # # validation
-        # value = {
-        #     'first_name': first_name,
-        #     'last_name': last_name,
-        #     'phone': phone,
-        #     'email': email
-        # }
-        # error_message = None
+        # validation
+        value = {
+            'first_name': first_name,
+            'last_name': last_name,
+            'phone': phone,
+            'email': email
+        }
+        error_message= None
 
         customer = Customer(first_name=first_name,
                             last_name=last_name,
@@ -32,21 +32,19 @@ class Signup1(View):
                             email=email,
                             password=password)
         error_message = self.validateCustomer(customer)
-        customer.password = make_password(customer.password)
-        customer.register()
-        return HttpResponse("Signup success")
-        #
-        # if not error_message:
-        #     print(first_name, last_name, phone, email, password)
-        #     customer.password = make_password(customer.password)
-        #     customer.save()
-        #     return redirect('home.html')
-        # else:
-        #     data = {
-        #         'error': error_message,
-        #         'values': value
-        #     }
-        #     return render(request, 'home')
+
+
+        if not error_message:
+            print(first_name, last_name, phone, email, password)
+            customer.password = make_password(customer.password)
+            customer.save()
+            return redirect('home')
+        else:
+            data = {
+                'error': error_message,
+                'values': value
+            }
+            return render(request, 'signup1.html', data)
 
     def validateCustomer(self, customer):
         error_message = None;
@@ -101,11 +99,14 @@ class Signup1(View):
 #
 #         print(email, password)
 #         return render(request, 'login1.html', {'error': error_message})
-
-def login1(request):
-    if request.method=='GET':
+class login1(View):
+    return_url= None
+    def get(self, request):
+        login1.return_url = request.GET.get('return_url')
         return render(request, 'login1.html')
-    else:
+
+
+    def post(self, request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         customer =Customer.get_customer_by_email(email)
@@ -113,7 +114,12 @@ def login1(request):
         if customer:
             flag = check_password(password, customer.password)
             if flag:
-                return redirect('home')
+                request.session['customer']= customer.id
+                if login1.return_url:
+                    return HttpResponseRedirect(login1.return_url)
+                else:
+                    login1.return_url = None
+                    return redirect('home')
             else:
                 error_message= 'Email or Password Invalid'
         else:

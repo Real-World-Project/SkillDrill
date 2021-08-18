@@ -55,10 +55,10 @@
                 <li><a class="nav-link scrollto" href="#blog">Blog</a></li>
                 <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
 
-                {% if user.is_authenticated %}
+                {% if request.session.customer %}
                 <li class="nav-item">
                     <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-user mr-1 text-success"></i>{{ user.username }}
+                        <i class="fa fa-user mr-1 text-success"></i>{{ Customer.first_name}}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
                         <a class="dropdown-item" href="{% url 'logout1' %}">Log Out</a>
@@ -71,7 +71,7 @@
                         <i class="fa fa-user mr-1 text-primary"></i>Accounts
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
-                        <a class="dropdown-item" href="customers/login1">Sign in</a>
+                        <a class="dropdown-item" href="{% url 'login1' %}">Sign in</a>
                         <a class="dropdown-item" href="{% url 'signup1' %}">Sign Up</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{#}">Password Reset</a>
