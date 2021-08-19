@@ -58,7 +58,7 @@
                 {% if request.session.customer %}
                 <li class="nav-item">
                     <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-user mr-1 text-success"></i>{{ Customer.first_name}}
+                        <i class="fa fa-user mr-1 text-success"></i>{{ session.first_name}}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
                         <a class="dropdown-item" href="{% url 'logout1' %}">Log Out</a>
