@@ -56,6 +56,10 @@ class Services(models.Model):
     def get_services_by_id(ids):
         return Services.objects.filter(id__in=ids)
 
+    def get_absolute_url(self):
+        return reverse('webservice', args=[str(self.id)])
+
+
 
 # Customer = user.socialaccount_set.filter(provider='google')[0].extra_data['id']
 

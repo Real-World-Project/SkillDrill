@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, UpdateView, DeleteView, ListView, DetailView, CreateView
 from django.views.generic.edit import *
 from blog.models import Post
-from locations.models import Location, Services, Category
+from locations.models import Location, Services, Category, Order
 from customers.models import Customer
 from django.urls import reverse_lazy
 
@@ -95,6 +95,10 @@ class serviceDeleteView(DeleteView):
     model = Services
     template_name = 'webservice/service_delete.html'
     success_url = reverse_lazy('webservice')
+
+class weborderView(ListView):
+    model = Order
+    template_name = 'weborder/weborder.html'
 
 
 

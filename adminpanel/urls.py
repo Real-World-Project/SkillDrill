@@ -19,6 +19,7 @@ path('adminaccount/', adminaccountView.as_view(), name='adminaccount'),
     path('webservice/addservice/', AddServiceView.as_view(), name='add-service'),
     path('webservice/update/<int:pk>/', serviceUpdateView.as_view(), name='edit_service'),
     path('webservice/delete/<int:pk>/', serviceDeleteView.as_view(), name='service_delete'),
+    path('weborder/', weborderView.as_view(), name='weborder'),
 
 ]
 
