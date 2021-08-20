@@ -3,6 +3,7 @@ from django.views.generic import TemplateView, UpdateView, DeleteView, ListView,
 from django.views.generic.edit import *
 from blog.models import Post
 from locations.models import Location, Services, Category
+from customers.models import Customer
 from django.urls import reverse_lazy
 
 
@@ -29,6 +30,18 @@ class BlogCreateView(CreateView):
     model = Post
     template_name = 'weblog/add_blog.html'
     fields = '__all__'
+    success_url = reverse_lazy('weblog')
+
+class blogUpdateView(UpdateView):
+    model = Post
+    template_name = 'weblog/edit_blog.html'
+    fields = '__all__'
+    success_url = reverse_lazy('weblog')
+
+
+class blogDeleteView(DeleteView):
+    model = Post
+    template_name = 'weblog/blog_delete.html'
     success_url = reverse_lazy('weblog')
 
 
@@ -71,22 +84,48 @@ class AddServiceView(CreateView):
     template_name = 'webservice/Add_Services.html'
     fields = '__all__'
 
+class serviceUpdateView(UpdateView):
+    model = Services
+    template_name = 'webservice/edit_service.html'
+    fields = '__all__'
+    success_url = reverse_lazy('webservice')
+
+
+class serviceDeleteView(DeleteView):
+    model = Services
+    template_name = 'webservice/service_delete.html'
+    success_url = reverse_lazy('webservice')
+
+
 
 class adminaccountView(TemplateView):
     template_name = 'account/account.html'
 
+def object_Count(request):
+    posts = Post.objects.all()
+    post_count = posts.count()
+    print(post_count,"Count garna lako thya bhayena")
+    locations = Location.objects.all()
+    location_count = locations.count()
+    services = Services.objects.all()
+    service_count = services.count()
+    customers = Customer.objects.all()
+    customer_count = customers.count()
+    # customer_count = customer.filter(is_staff=0).count()
+    # superuser_count = customer.filter(is_staff=1).count()
+    context = {
+        'post': post_count,
+        'location': location_count,
+        'service': service_count,
+        'customer': customer_count,
+        # 'admin': superuser_count,
+    }
+    return render(request, 'adminpanel/dashboard.html', context)
 
-class blogUpdateView(UpdateView):
-    model = Post
-    template_name = 'weblog/edit_blog.html'
-    fields = '__all__'
-    success_url = reverse_lazy('weblog')
 
 
-class blogDeleteView(DeleteView):
-    model = Post
-    template_name = 'weblog/blog_delete.html'
-    success_url = reverse_lazy('weblog')
+
+
 
 
 

@@ -8,7 +8,8 @@
         <div class="col-md-8 card mb-4 ml-5-3 right align-top" style="margin-left: 270px">
             <main>
                 <h1 class="card-header text-center">New post</h1>
-                <form action="" method="post">{% csrf_token %}
+                <form action="" method="post">
+                    {% csrf_token %}
                     {{ form|crispy }}
                     <input  class="btn-primary btn-lg" type="submit" value="Save"  style="margin-left: 450px; margin-bottom: 220px"/>
                 </form>
