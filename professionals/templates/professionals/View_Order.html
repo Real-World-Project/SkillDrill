@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% load static %}
+{% load cart %}
+{% load custom_filter %}
+
+{% block title %}
+<title>Professional</title>
+
+{% endblock %}
+{% block body %}
+{% include 'navbar.html' %}
+
+<div class="container">
+    <h2>SkillDrill. Order</h2>
+      <table class="table-striped container mt-5 ">
+        <tr>
+            <th>Order ID</th>
+            <th>Service</th>
+            <th>Customer</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Date</th>
+            <th>Accept</th>
+        </tr>
+        {% for order in orders %}
+{#            {% if professional.services == order.service %}#}
+                <tr class="">
+                    <td> {{ order.pk }} </td>
+                    <td> {{ order.service }} </td>
+                    <td>{{ order.customer }} </td>
+                    <td> {{ order.quantity }} </td>
+                    <td> {{ order.price }} </td>
+                    <td>{{ order.address }} </td>
+                    <td> {{ order.phone }} </td>
+                    <td>{{ order.date }}</td>
+                    <td>
+                        <a class="btn btn-sm btn-success">Accept</a>
+                    </td>
+
+                </tr>
+{#            {% endif %}#}
+        {% endfor %}
+
+        </table>
+    </div>
+{% endblock %}

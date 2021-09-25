@@ -1,0 +1,52 @@
+{% extends "adminlayout.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+    <title>Order Panel</title>
+
+{% endblock %}
+{% block body %}
+
+ <div class="main-content">
+     <main>
+       <div class="row">
+            <div class="col-md-10 card mb-4  mt-3 left top">
+                <h2>SkillDrill. Order</h2>
+              <table class="table-striped container mt-5 ">
+                <tr>
+                    <th>Order ID</th>
+                    <th>Service</th>
+                    <th>Customer</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Date</th>
+                    <th>Accept</th>
+                </tr>
+                {% for order in order_list %}
+                <tr class="">
+                    <td> {{ order.pk }} </td>
+                    <td> {{ order.service }} </td>
+                    <td>{{ order.customer }} </td>
+                    <td> {{ order.quantity }} </td>
+                    <td> {{ order.price }} </td>
+                    <td>{{ order.address }} </td>
+                    <td> {{ order.phone }} </td>
+                    <td>{{ order.date }}</td>
+                    <td>
+                        <a class="btn btn-sm btn-success ">Accept</a>
+                    </td>
+                </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+
+
+          </div>
+     </main>
+ </div>
+
+
+{% endblock %}

@@ -50,7 +50,7 @@ class Services(models.Model):
     location = models.ManyToManyField(Location, related_name="services")
 
     def __str__(self):
-        return f"{self.title}: {self.charge}"
+        return f"{self.title}"
 
 
     @staticmethod
@@ -69,8 +69,8 @@ class Order(models.Model):
     phone = models.CharField(max_length=50, default="", blank=True)
     date = models.DateField(default=datetime.datetime.today)
 
-    # def __str__(self):
-    #     return f"{self.customer.id}. {self.customer}"
+    def __str__(self):
+        return f"{self.service} {self.quantity}"
 
 
     def placeOrder(self):

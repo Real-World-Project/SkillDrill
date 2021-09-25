@@ -1,5 +1,3 @@
-
-
 {% extends "layout.html" %}
 {% load static %}
 {% load cart %}
@@ -11,13 +9,13 @@
 {% endblock %}
 {% block body %}
 {% include 'navbar.html' %}
-<div>
+<div class="container mt-4">
 
-    <div>
+    <div class="p-4 m-4">
 
 
-        <div >
-            <div>
+        <div class="col-lg-5 rounded mx-auto border pt-4">
+            <div class="text-center col">
 
                 <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Shopping_cart_with_food_clip_art_2.svg/307px-Shopping_cart_with_food_clip_art_2.svg.png" alt=""
@@ -26,7 +24,7 @@
             <div class="display-8">Create An Account</div>
             <hr>
             </div>
-            <h3 >Create An Account</h3>
+            <h3 hidden class="alert alert-light border rounded">Create An Account</h3>
             <form action="" method="POST">
 
                 {% csrf_token %}
@@ -40,45 +38,48 @@
                 <div class="form-group">
                     <label for="">First Name</label>
                     <input type="text" name="firstname"
-                     id="" value="{{values.first_name}}" >
+                     id="" value="{{values.first_name}}" class="form-control form-control-sm"
+                     placeholder="">
                 </div>
 
                 <!-- last name -->
-                <div >
+                <div class="form-group">
                     <label for="">Last Name</label>
                     <input type="text" name="lastname"
-                    id="" value="{{values.last_name}}"
+                    id="" value="{{values.last_name}}" class="form-control form-control-sm"
                     >
                 </div>
 
                 <!-- phone -->
-                <div >
+                <div class="form-group">
                     <label for="">Phone</label>
                     <input type="text" name="phone"
+                    id="" class="form-control form-control-sm"
                     value="{{values.phone}}"
                     placeholder="565698959"
                     >
                 </div>
                 <!-- email -->
-                <div >
+                <div class="form-group">
                     <label for="">Email</label>
-                    <input required type="email" name="email"
+                    <input required type="email" name="email" id=""
                     value="{{values.email}}"
-                           placeholder="example@gmail.com">
+                    class=" form-control-sm form-control" placeholder="example@gmail.com">
                 </div>
 
 
                 <!-- password -->
-                <div >
+                <div class="form-group">
                     <label for="">Password</label>
                     <input type="password"
                     name="password"
-                           placeholder="********">
+                    id=""
+                     class="form-control form-control-sm" placeholder="******">
                 </div>
 
                 <hr>
                 <div class="form-group">
-                    <input type="submit" value="Create An Account ">
+                    <input class="btn btn-sm btn-info" type="submit" value="Create An Account ">
                 </div>
 
 

@@ -1,4 +1,7 @@
-{% extends "layout.html" %} {% load static %} {% block title %}
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}
+{% load crispy_forms_tags %}
 <title>SkillDrill</title>
 
 {% endblock %} {% block body %} {% include 'professionalNav.html' %}
@@ -12,23 +15,12 @@
 
     </div>
     <div class="signup">
-
-        <p>Become a skilldrill partner within minutes</p>
-        <select class="mydropdown" autofocus name="service">
-            <option>Choose your service</option>
-            <option value="Advertising services">Advertising services</option>
-            <option value="AC repair">AC repair</option>
-            <option value="Electrician">Electrician</option>
-            <option value="Mobile repair">Mobile repair</option>
-            <option value="plumbing">plumbing</option>
-            <option>cleaning</option>
-            <option>salon</option>
-            <option>wall paint</option>
-
-
-        </select>
-        <input type="number" placeholder="Enter your phone number" class="mydropdown" style="margin-top:30px">
-        <a href="signup" class="btn btn-primary"  style="margin-left:40px; margin-top:40px; width:300px">SignUp</a>
+        <form action="" method="post" class="form">
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn btn-success ml-2" type="submit">Register</button>
+        </form>
+        <a class="btn btn-primary" href="{% url 'signin_professional' %}" role="button">Login</a>
 
     </div>
 

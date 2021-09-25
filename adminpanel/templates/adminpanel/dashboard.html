@@ -14,12 +14,12 @@
                     <div class="card-body">
                         <span class="ti-briefcase"></span>
                         <div>
-                            <h5>Total Tasks</h5>
-                            <h4>1122</h4>
+                            <h5>Total Blog</h5>
+                            <h4>{{ post }}</h4>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="">View all</a>
+                        <a href="#">View all</a>
                     </div>
                 </div>
 
@@ -54,85 +54,31 @@
             <section class="recent">
                 <div class="activity-grid">
                     <div class="activity-card">
-                        <h3>Recent activity</h3>
+                        <h3>Recent Orders</h3>
 
                         <div class="table-responsive">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Project</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Team</th>
+                                        <th>Order ID</th>
+                                        <th>Order Date</th>
+                                        <th>Customer Name</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                {% for order in order_list %}
                                     <tr>
-                                        <td>App Development</td>
-                                        <td>15 Aug, 2020</td>
-                                        <td>22 Aug, 2020</td>
-                                        <td class="td-team">
-                                            <div class="img-1"></div>
-                                            <div class="img-2"></div>
-                                            <div class="img-3"></div>
-                                        </td>
-                                        <td>
-                                            <span class="badge success">Success</span>
-                                        </td>
+                                        <td> {{ order.pk }} </td>
+                                        <td> {{ order.date }} </td>
+                                        <td>{{ order.customer }} </td>
+                                        <td> {{ order.quantity }} </td>
+                                        <td> {{ order.price }} </td>
+                                        <td> Active </td>
                                     </tr>
-                                    <tr>
-                                        <td>Logo Design</td>
-                                        <td>15 Aug, 2020</td>
-                                        <td>22 Aug, 2020</td>
-                                        <td class="td-team">
-                                            <div class="img-1"></div>
-                                            <div class="img-2"></div>
-                                            <div class="img-3"></div>
-                                        </td>
-                                        <td>
-                                            <span class="badge warning">Processing</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Server setup</td>
-                                        <td>15 Aug, 2020</td>
-                                        <td>22 Aug, 2020</td>
-                                        <td class="td-team">
-                                            <div class="img-1"></div>
-                                            <div class="img-2"></div>
-                                            <div class="img-3"></div>
-                                        </td>
-                                        <td>
-                                            <span class="badge success">Success</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Front-end Design</td>
-                                        <td>15 Aug, 2020</td>
-                                        <td>22 Aug, 2020</td>
-                                        <td class="td-team">
-                                            <div class="img-1"></div>
-                                            <div class="img-2"></div>
-                                            <div class="img-3"></div>
-                                        </td>
-                                        <td>
-                                            <span class="badge warning">Processing</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Web Development</td>
-                                        <td>15 Aug, 2020</td>
-                                        <td>22 Aug, 2020</td>
-                                        <td class="td-team">
-                                            <div class="img-1"></div>
-                                            <div class="img-2"></div>
-                                            <div class="img-3"></div>
-                                        </td>
-                                        <td>
-                                            <span class="badge success">Success</span>
-                                        </td>
-                                    </tr>
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>

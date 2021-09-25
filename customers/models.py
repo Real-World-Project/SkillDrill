@@ -8,6 +8,9 @@ class Customer(models.Model):
     email = models.EmailField()
     password = models.CharField(max_length=500)
 
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
     def register(self):
         self.save()
 
