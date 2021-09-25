@@ -1,7 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Location, Services, Category, Order
-from customers.models import Customer
-from django.contrib.auth.models import User
+from .models import Location, Services, Category
 # from django.views.generic import TemplateView
 from django.views import View
 
@@ -30,8 +28,6 @@ def service(request, service_name, location_name):
     # request.session['services_id'] = services.id
     # request.session.get('cart').clear()
     cart = request.session.get('cart')
-
-
     if not cart:
         request.session['cart'] = {}
 
@@ -80,25 +76,5 @@ class CartView(View):
 
 class CheckoutView(View):
     def post(self, request):
-        address = request.POST.get('address')
-        phone = request.POST.get('phone')
-        customer = request.session.get('customer')
-        cart = request.session.get('cart')
-        services = Services.get_services_by_id(list(cart.keys()))
-
-        # print("---------------",customer)
-        # print("==============",services)
-
-        for service in services:
-            order = Order(customer = Customer(id=customer),
-                          service = service,
-                          price = service.charge,
-                          address = address,
-                          phone = phone,
-                          quantity = cart.get(str(service.id)))
-
-            print(order.placeOrder())
-        # print("++++++++++++++++", customer)
-
-        print("----", address, phone, customer, cart, services)
+        print(request.POST)
         return redirect("cart")

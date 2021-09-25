@@ -1,8 +1,7 @@
 from django.db import models
 from django.urls import reverse
 import datetime
-# from django.contrib.auth.models import User
-from customers.models import Customer
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -57,24 +56,24 @@ class Services(models.Model):
     def get_services_by_id(ids):
         return Services.objects.filter(id__in=ids)
 
+    def get_absolute_url(self):
+        return reverse('webservice', args=[str(self.id)])
+
+
 
 # Customer = user.socialaccount_set.filter(provider='google')[0].extra_data['id']
 
 class Order(models.Model):
     service = models.ForeignKey(Services, on_delete=models.CASCADE)
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    customer = models.ForeignKey(User, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
     price = models.IntegerField()
     address = models.CharField(max_length=50, default='', blank=True)
     phone = models.CharField(max_length=50, default="", blank=True)
     date = models.DateField(default=datetime.datetime.today)
 
-    # def __str__(self):
-    #     return f"{self.customer.id}. {self.customer}"
-
-
-    def placeOrder(self):
-        self.save()
+    def __str__(self):
+        return f"{self.customer.id}. {self.customer}"
 
 
 
