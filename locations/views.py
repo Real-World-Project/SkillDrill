@@ -38,6 +38,8 @@ def service(request, service_name, location_name):
 
 
     if cart:
+        request.session.get('cart').clear()
+        
         quantity = cart.get(service)
         if quantity:
             if remove:
