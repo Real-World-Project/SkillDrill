@@ -11,39 +11,19 @@
         <main>
             <!-- Location adding Center -->
             <div id="container col-xl-10">
-                <a href="{% url 'add-service' %}" class="btn btn-lg btn-block">+ Add New Service</a>
+                <a href="{% url 'add-service' %}" >+ Add New Service</a>
             </div>
+
+
+
             {% if is_empty %}
             <h1>No Location right now please add location where you available</h1>
             {% endif %}
-            <div class="row">
-                <div class="col-md-10 card mb-4  mt-3 left top">
-                    <h2>SkillDrill. Services</h2>
-                  <table class="table-striped container mt-5 ">
-                    <tr>
-                        <th>ID</th>
-                        <th>Category</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Available Location</th>
-                        <th>Update, Delete</th>
-                    </tr>
-                      {% for services in object_list %}
-                      <tr>
-                          <td>{{ services.pk}}</td>
-                          <td>{{ services.category}}</td>
-                          <td>{{ services.title}}</td>
-                          <td class="pagination-sm">{{ services.description}}</td>
-                          <td>{{ services.location}}</td>
-                          <td>
-                              <a href="{% url 'edit_service' services.pk  %}" class="btn btn-sm btn-success ">Update</a>
-                              <a href="{% url 'service_delete' services.pk  %}" class="btn btn-sm btn-danger ">Delete</a>
-                          </td>
-                      </tr>
-                      {% endfor %}
-                  </table>
-                </div>
-            </div>
+            {% for services in object_list %}
+                <ul>
+                    <li>{{services.category}}</li>
+                </ul>
+            {% endfor %}
         </main>
     </div>
 {% endblock body %}
