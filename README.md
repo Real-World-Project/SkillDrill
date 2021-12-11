@@ -7,3 +7,4 @@ Python3 - 3.8.5
 Bootstrap
 
 django-allauth (for authentication)
+## Project finished
